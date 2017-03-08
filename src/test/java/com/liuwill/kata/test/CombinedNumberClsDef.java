@@ -13,39 +13,35 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by videopls on 2017/3/3.
+ * Created by videopls on 2017/3/7.
  */
-public class CombinedNumberFinalDef {
-    public static List<String> dataList;
-    public static Integer itemCount;
-    private CombinedNumber combinedNumber;
+public class CombinedNumberClsDef {
+    private static int itemCount;
+    private static CombinedNumber combinedNumber;
 
-    @Given("^a list has (\\d+) items$")
+    @Given("^still a list has (\\d+) items$")
     public void theFunctionReceiveListOne(Integer itemCount) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         //throw new PendingException();
-        CombinedNumberFinalDef.itemCount = itemCount;
+        this.itemCount = itemCount;
     }
 
-    @When("^the list is$")
+    @When("^we have$")
     public void theListIs(DataTable listTabel) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         //throw new PendingException();
         List<String> dataList = listTabel.asList(String.class);
-        CombinedNumberFinalDef.dataList = new ArrayList<>(dataList);
-
-        assertEquals(CombinedNumberFinalDef.itemCount.intValue(),dataList.size());
-        assertEquals(true, dataList.size()>0);
 
         combinedNumber = new CombinedNumber(dataList);
+        assertEquals(this.itemCount,combinedNumber.size());
     }
 
-    @Then("^max number is \"([^\"]*)\"$")
+    @Then("^max item is \"([^\"]*)\"$")
     public void maxNumberIs(String expectStr) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         //throw new PendingException();
-        String maxStr = CombinedNumberMain.calc(CombinedNumberFinalDef.dataList);
+        String maxStr = combinedNumber.popMax();
         assertEquals(expectStr,maxStr);
-        assertEquals(expectStr,combinedNumber.concat());
+        assertEquals(this.itemCount - 1,combinedNumber.size());
     }
 }
