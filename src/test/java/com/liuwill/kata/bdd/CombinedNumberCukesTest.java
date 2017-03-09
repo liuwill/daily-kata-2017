@@ -1,4 +1,4 @@
-package com.liuwill.kata.test;
+package com.liuwill.kata.bdd;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;

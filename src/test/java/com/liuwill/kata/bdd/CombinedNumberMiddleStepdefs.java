@@ -1,4 +1,4 @@
-package com.liuwill.kata.test;
+package com.liuwill.kata.bdd;
 
 import com.liuwill.kata.CombinedNumber.CombinedNumber;
 import cucumber.api.PendingException;
