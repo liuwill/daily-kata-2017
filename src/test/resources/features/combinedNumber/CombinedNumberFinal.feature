@@ -29,9 +29,3 @@ Feature: integer list concat result
     When the list is
       |5|50|56|565|
     Then max number is "56565550"
-
-  Scenario: find max item
-    Given still a list has 4 items
-    When we have
-      |5|50|56|565|
-    Then max item is "56"

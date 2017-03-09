@@ -154,6 +154,8 @@ public class CombinedNumber {
         if(first.equals(second)){
             return 0;
         }
+
+        int count = 0;
         while(!firstMark || !secondMark){
             if(firstindex < firstLength && secondIndex < secondLength){
                 char oneStart = first.charAt(firstindex);
@@ -162,9 +164,11 @@ public class CombinedNumber {
                 if(oneStart != twoStart){
                     return twoStart > oneStart ? 1:-1;
                 }
-            }if(firstindex == firstLength && secondIndex == secondLength){
+            }else if(firstindex == firstLength && secondIndex == secondLength){
                 return 0;
-            }else if(firstindex == firstLength){
+            }
+
+            if(firstindex == firstLength){
                 firstMark = true;
             }else if(secondIndex == secondLength){
                 secondMark = true;
@@ -172,6 +176,11 @@ public class CombinedNumber {
 
             firstindex = (firstindex+1)%firstLength;
             secondIndex = (secondIndex+1)%secondLength;
+            count++;
+
+            if(count > firstLength+secondLength){
+                break;
+            }
         }
 
         return second.compareTo(first);
