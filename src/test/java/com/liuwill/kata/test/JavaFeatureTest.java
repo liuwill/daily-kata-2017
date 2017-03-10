@@ -11,7 +11,6 @@ public class JavaFeatureTest {
     public void test() throws Throwable {
         String[] strList = new String[]{};
         assertEquals(0,strList.length);
-        System.out.println(strList.length);
 
         String[] strList1 = new String[]{"",""};
         assertEquals(2,strList1.length);

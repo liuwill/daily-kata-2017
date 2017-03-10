@@ -1,7 +1,10 @@
 package com.liuwill.kata.test;
 
+import com.liuwill.kata.Diversion.DiversionHelper;
 import com.liuwill.kata.Diversion.DiversionMain;
 import org.junit.Test;
+
+import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -19,10 +22,36 @@ public class DiversionUtilsTest {
     }
 
     @Test public void generateCombinations(){
-        int bit = 5;
-        String[] combinations = DiversionMain.build(bit);
-        int bitSqrt = DiversionMain.countCombinations(bit);
+        int count = 5;
+        Random random = new Random();
+        for(;count>0;count--){
+            int bit = random.nextInt(20);
+            String[] combinations = DiversionMain.build(bit);
+            int bitSqrt = DiversionMain.countCombinations(bit);
 
-        assertEquals(bitSqrt,combinations.length);
+            assertEquals(bitSqrt,combinations.length);
+        }
+    }
+
+    @Test public void testFibonacciCombination(){
+        for(int i=3;i<10;i++){
+            String[] actualArr = DiversionMain.build(i);
+            int actual = DiversionMain.countMatch(actualArr);
+
+            String[] expectArr1 = DiversionMain.build(i-1);
+            String[] expectArr2 = DiversionMain.build(i-2);
+            int expect = DiversionMain.countMatch(expectArr1)+DiversionMain.countMatch(expectArr2);
+
+            assertEquals(expect,actual);
+        }
+    }
+
+    @Test public void testFibonacciValue(){
+        int number = 5;
+
+        int actual = DiversionHelper.count(number);
+        int expect = DiversionHelper.count(number-1) + DiversionHelper.count(number-2);
+
+        assertEquals(expect,actual);
     }
 }

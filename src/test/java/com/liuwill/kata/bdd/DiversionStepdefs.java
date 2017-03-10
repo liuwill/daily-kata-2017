@@ -1,5 +1,6 @@
 package com.liuwill.kata.bdd;
 
+import com.liuwill.kata.Diversion.DiversionHelper;
 import com.liuwill.kata.Diversion.DiversionMain;
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
@@ -42,7 +43,8 @@ public class DiversionStepdefs {
             int result = resultList.get(i);
             String[] verifyArr = DiversionMain.build(bit);
 
-            assertEquals(result,DiversionMain.countMatch(verifyArr));
+            assertEquals(result, DiversionMain.countMatch(verifyArr));
+            assertEquals(result, DiversionHelper.count(bit));
         }
     }
 }

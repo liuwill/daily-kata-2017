@@ -46,12 +46,7 @@ public class DiversionMain {
     }
 
     public static String[] build(int bit) {
-        List<String> resultList = new ArrayList<>();
         String[] resultArr = new String[]{""};
-
-        /*if(bit<1){
-            return resultArr;
-        }*/
 
         String[] bits = new String[]{"0","1"};
         for(int i = 0; i<bit ; i++){
