@@ -2,6 +2,7 @@ package com.liuwill.kata.test;
 
 import com.liuwill.kata.Diversion.DiversionHelper;
 import com.liuwill.kata.Diversion.DiversionMain;
+import org.junit.AfterClass;
 import org.junit.Test;
 
 import java.util.Random;
@@ -53,5 +54,10 @@ public class DiversionUtilsTest {
         int expect = DiversionHelper.count(number-1) + DiversionHelper.count(number-2);
 
         assertEquals(expect,actual);
+    }
+
+    @AfterClass
+    public static void outputResult(){
+        System.out.println("Diversion Utils Test");
     }
 }

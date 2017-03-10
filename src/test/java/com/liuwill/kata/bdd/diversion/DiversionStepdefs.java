@@ -3,7 +3,6 @@ package com.liuwill.kata.bdd;
 import com.liuwill.kata.Diversion.DiversionHelper;
 import com.liuwill.kata.Diversion.DiversionMain;
 import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -25,17 +24,17 @@ public class DiversionStepdefs {
     }
 
     @When("^the lists are$")
-    public void theListsAre(DataTable listTabel) throws Throwable {
+    public void theListsAre(DataTable listTable) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         //throw new PendingException();
-        bitList = listTabel.asList(Integer.class);
+        bitList = listTable.asList(Integer.class);
     }
 
     @Then("^combinations result numbers are$")
-    public void groupCountNumbersAre(DataTable listTabel) throws Throwable {
+    public void groupCountNumbersAre(DataTable listTable) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         //throw new PendingException();
-        List<Integer> resultList = listTabel.asList(Integer.class);
+        List<Integer> resultList = listTable.asList(Integer.class);
 
         assertEquals(bitList.size(),resultList.size());
         for(int i = 0; i < resultList.size();i++){

@@ -1,5 +1,6 @@
 package com.liuwill.kata.test;
 
+import org.junit.AfterClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,5 +18,10 @@ public class JavaFeatureTest {
 
         String[] strList2 = new String[2];
         assertEquals(2,strList2.length);
+    }
+
+    @AfterClass
+    public static void outputResult(){
+        System.out.println("Java Feature Test");
     }
 }
