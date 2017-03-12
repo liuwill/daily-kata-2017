@@ -1,4 +1,4 @@
-package com.liuwill.kata.bdd;
+package com.liuwill.kata.bdd.diversion;
 
 import com.liuwill.kata.Diversion.DiversionHelper;
 import com.liuwill.kata.Diversion.DiversionMain;
