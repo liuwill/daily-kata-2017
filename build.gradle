@@ -15,7 +15,7 @@ repositories {
     jcenter()
 }
 
-//mainClassName = 'com.liuwill.kata.HundredDoor'
+mainClassName = 'com.liuwill.kata.DailyKata'
 
 sourceSets{
     main{
