@@ -1,22 +1,20 @@
 package com.liuwill.kata.CombinedNumber;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by videopls on 2017/3/7.
  */
 public class CombinedNumber {
-    private String[] storeArr;
     private String[] sortHeapArr;
 
     public CombinedNumber(List<String> sourceList){
-        Object[] objArr = sourceList.toArray();
-        storeArr = new String[objArr.length] ;
-        for(int i = 0;i < sourceList.size(); i++){
-            storeArr[i] = (String) objArr[i];
-        }
+        String[] storeArr = sourceList.toArray(new String[0]);
 
+        sortHeapArr = generateSortedHeap(storeArr);
+    }
+
+    public CombinedNumber(String[] storeArr){
         sortHeapArr = generateSortedHeap(storeArr);
     }
 
@@ -27,10 +25,6 @@ public class CombinedNumber {
     public String concat(){
         String[] itemArr = sortHeapArr;
         StringBuilder strBuilder = new StringBuilder(itemArr.length);
-        /*String aStr = "";
-        for(int i=0;i<itemArr.length;i++){
-            aStr += itemArr[i];
-        }*/
         while(itemArr.length > 0){
             strBuilder.append(itemArr[0]);
             itemArr = popHeapTop(itemArr);
