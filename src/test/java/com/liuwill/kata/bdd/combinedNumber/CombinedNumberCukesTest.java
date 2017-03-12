@@ -1,4 +1,4 @@
-package com.liuwill.kata.bdd;
+package com.liuwill.kata.bdd.combinedNumber;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;

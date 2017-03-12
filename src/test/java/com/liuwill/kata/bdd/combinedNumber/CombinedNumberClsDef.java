@@ -1,4 +1,4 @@
-package com.liuwill.kata.bdd;
+package com.liuwill.kata.bdd.combinedNumber;
 
 import com.liuwill.kata.CombinedNumber.CombinedNumber;
 import com.liuwill.kata.CombinedNumber.CombinedNumberMain;
