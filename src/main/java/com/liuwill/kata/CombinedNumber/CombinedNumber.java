@@ -26,16 +26,16 @@ public class CombinedNumber {
 
     public String concat(){
         String[] itemArr = sortHeapArr;
-        String str = "";
-        String aStr = "";
+        StringBuilder strBuilder = new StringBuilder(itemArr.length);
+        /*String aStr = "";
         for(int i=0;i<itemArr.length;i++){
             aStr += itemArr[i];
-        }
+        }*/
         while(itemArr.length > 0){
-            str += itemArr[0];
+            strBuilder.append(itemArr[0]);
             itemArr = popHeapTop(itemArr);
         }
-        return str;
+        return strBuilder.toString();
     }
 
     public String popMax(){
