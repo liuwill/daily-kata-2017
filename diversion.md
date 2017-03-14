@@ -1,3 +1,5 @@
+## 待解问题
+
 Think of binary numbers: sequences of 0's and 1's.
 How many n-digit binary numbers are there that
 don't have two adjacent 1 bits?
@@ -15,7 +17,8 @@ the question: can you prove why that relationship exists?
 (Source http://codekata.pragprog.com,
  Code Kata Fifteen -- A Diversion)
 
-## 计算过程
+## 解题思路
+
 > 实际上结果是一组斐波那契数列
 
 计算过程本质上是一个递归的过程，无论是多少位的二进制数，本质上可以分成1开头和0开头的两组，
