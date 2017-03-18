@@ -1,6 +1,7 @@
 package com.liuwill.kata
 
 import com.liuwill.kata.Diversion.BinaryDiversion
+import org.junit.Assert.assertNotEquals
 import org.junit.Test
 import kotlin.test.assertEquals
 
@@ -10,9 +11,15 @@ import kotlin.test.assertEquals
 class KotlinFeatureTest {
     @Test fun testBinaryDiversion(){
         println("Test Binary Diversion")
-
+        val BASE = 2.0
         val num = 4
-        assertEquals(num, BinaryDiversion().count(num))
+        val notExpect = Math.pow(BASE, num.toDouble()).toInt()
+
+        assertNotEquals(notExpect, BinaryDiversion().count(num))
+
+        val expect = BinaryDiversion().count(num)
+        val actual = BinaryDiversion().count(num-1) + BinaryDiversion().count(num-2)
+        assertEquals(expect,actual)
     }
 
     @Test fun buildJavaFuncFromPhpArr(){

@@ -5,7 +5,20 @@ package com.liuwill.kata.Diversion
  */
 
 class BinaryDiversion{
-    fun count(bits:Int):Int{
-        return bits
+
+    fun count(number: Int): Int {
+        val resultArr = IntArray(number + 1)
+
+        for (i in 0..number) {
+            if (i == 0) {
+                resultArr[i] = 1
+            } else if (i == 1) {
+                resultArr[i] = 2
+            } else {
+                resultArr[i] = resultArr[i - 1] + resultArr[i - 2]
+            }
+        }
+
+        return resultArr[number]
     }
 }
