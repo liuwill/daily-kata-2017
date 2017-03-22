@@ -2,12 +2,10 @@ package com.liuwill.kata.test
 
 import com.liuwill.kata.balanced.BalancedStack
 import com.liuwill.kata.balanced.BalancedUtils
-import junit.framework.Assert.assertFalse
+import org.junit.Assert.assertFalse
 import org.junit.After
-import org.junit.AfterClass
 import org.junit.Assert.assertNotEquals
 import org.junit.Assert.assertTrue
-import org.junit.Before
 import org.junit.Test
 import kotlin.test.assertEquals
 
