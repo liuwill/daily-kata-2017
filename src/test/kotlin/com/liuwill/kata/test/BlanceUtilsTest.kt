@@ -5,7 +5,9 @@ import com.liuwill.kata.balanced.BalancedUtils
 import junit.framework.Assert.assertFalse
 import org.junit.After
 import org.junit.AfterClass
+import org.junit.Assert.assertNotEquals
 import org.junit.Assert.assertTrue
+import org.junit.Before
 import org.junit.Test
 import kotlin.test.assertEquals
 
@@ -14,6 +16,8 @@ import kotlin.test.assertEquals
  */
 
 class BlanceUtilsTest {
+    var balancedUtils:BalancedUtils = BalancedUtils()
+
     @Test
     fun test() {
         val leftParentheses = BalancedUtils.LEFT_PARENTHESES
@@ -23,21 +27,23 @@ class BlanceUtilsTest {
         val rightBrace = BalancedUtils.RIGHT_BRACE
         val leftBrace = BalancedUtils.LEFT_BRACE
 
-        assertTrue(BalancedUtils().compareElementBalance(leftParentheses,rightParentheses))
-        assertTrue(BalancedUtils().compareElementBalance(leftBrace,rightBrace))
-        assertTrue(BalancedUtils().compareElementBalance(leftBrackets,rightBrackets))
+        assertTrue(balancedUtils.compareElementBalance(leftParentheses,rightParentheses))
+        assertTrue(balancedUtils.compareElementBalance(leftBrace,rightBrace))
+        assertTrue(balancedUtils.compareElementBalance(leftBrackets,rightBrackets))
 
-        assertFalse(BalancedUtils().compareElementBalance(rightBrackets,leftParentheses))
-        assertFalse(BalancedUtils().compareElementBalance(rightParentheses,leftParentheses))
+        assertFalse(balancedUtils.compareElementBalance(rightBrackets,leftParentheses))
+        assertFalse(balancedUtils.compareElementBalance(rightParentheses,leftParentheses))
     }
 
     @Test
     fun testComput(){
         val str = "{}({)}"
         val str3 = "{}{()}"
-        val strCount = BalancedUtils().compute(str)
+        val strCount = balancedUtils.compute(str)
         assertEquals(0,strCount)
-        assertEquals(3,BalancedUtils().compute(str3))
+        assertNotEquals(balancedUtils.countLeft(str3),strCount)
+
+        assertEquals(balancedUtils.countLeft(str3),balancedUtils.compute(str3))
     }
 
     @Test
@@ -59,6 +65,6 @@ class BlanceUtilsTest {
 
     @After
     fun outputResult() {
-        println("balanced utils Test")
+        println("balanced stack & utils Test")
     }
 }

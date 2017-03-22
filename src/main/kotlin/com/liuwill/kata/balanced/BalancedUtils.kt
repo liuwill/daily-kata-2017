@@ -31,6 +31,12 @@ class BalancedUtils {
         return BRACKET_ELEMENT.contains(left.toString()+right) && BRACKET_ELEMENT.indexOf(left)%2==0
     }
 
+    fun countLeft(str:String):Int{
+        val chrArr = str.toCharArray()
+        val count:Int = chrArr.count { isLeft(it) }
+        return count
+    }
+
     fun compute(rawStr :String) :Int{
         var balanceStack = BalancedStack(rawStr.length)
         /*val count = (0..rawStr.length-1)
