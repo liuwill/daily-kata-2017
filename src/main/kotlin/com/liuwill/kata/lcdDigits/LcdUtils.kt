@@ -83,10 +83,11 @@ class LcdUtils {
                     curStr += item
                 }
                 if(count < input.size){
-                    for(it in 0..space-1){
+                    (0..space-1).forEach {
                         curStr += LcdDigits.BLANK_STR
                     }
                 }
+
                 resultArr[i] = curStr
 
                 i++
