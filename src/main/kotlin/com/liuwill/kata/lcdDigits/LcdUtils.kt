@@ -26,11 +26,14 @@ class LcdUtils {
                 return false
             }
 
-            for(j in 0..(first[i].size-1)){
+            /*for(j in 0..(first[i].size-1)){
                 if(first[i][j] != second[i][j]){
                     return false
                 }
-            }
+            }*/
+            (0..(first[i].size-1))
+                .filter { first[i][it] != second[i][it] }
+                .forEach { return false }
         }
         return true
     }
