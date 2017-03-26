@@ -41,11 +41,17 @@ class LcdUtils {
             return result
         }
 
+        var count = 1
         for(col in input){
             for(digit in col){
                 result += digit
             }
-            result += "\n"
+
+            if(count < input.size){
+                result += "\n"
+            }
+
+            count++
         }
         return result
     }
