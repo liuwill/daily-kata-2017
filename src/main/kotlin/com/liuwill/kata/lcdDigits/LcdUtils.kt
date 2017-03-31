@@ -40,7 +40,7 @@ class LcdUtils {
 
     fun printDigit(input:Array<CharArray>):String{
         var result = ""
-        if(input == null || input.size<1){
+        if(input.isEmpty()){
             return result
         }
 
@@ -78,9 +78,8 @@ class LcdUtils {
 
         var count = 1
         for(top in input){
-            var i = 0
 
-            for(chars in top!!){
+            for((i, chars) in top!!.withIndex()){
                 var curStr = resultArr[i]
                 for(item in chars){
                     curStr += item
@@ -93,7 +92,6 @@ class LcdUtils {
 
                 resultArr[i] = curStr
 
-                i++
             }
             count++
         }
