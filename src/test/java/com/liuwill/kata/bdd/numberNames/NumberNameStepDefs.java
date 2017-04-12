@@ -35,10 +35,14 @@ public class NumberNameStepDefs {
 
     @Then("^result is \\[([a-z,\\s]+)\\]$")
     public void groupCountNumbersAre(String expect) throws Throwable {
-        String actual = numberNamesUtils.transformDigits(numberNamesUtils.getArray(number));
+        String finalActual = numberNamesUtils.spellNumberName(number);
 
-        assertEquals(expect,actual);
-        System.out.println("a "+bits+" bit number "+number+" will produce "+actual);
+        System.out.println("a "+bits+" bit number "+number+" will produce "+finalActual);
+        if(number<1000){
+            String actual = numberNamesUtils.transformDigits(numberNamesUtils.getArray(number));
+            assertEquals(expect,actual);
+        }
+        assertEquals(expect,finalActual);
     }
 
     @After
