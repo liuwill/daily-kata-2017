@@ -47,6 +47,6 @@ public class NumberNameStepDefs {
 
     @After
     public void hook(){
-        System.out.println("number names transform pass");
+        System.out.println("number names transform passed");
     }
 }
