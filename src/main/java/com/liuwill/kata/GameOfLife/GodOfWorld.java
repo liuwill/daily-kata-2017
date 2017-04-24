@@ -46,6 +46,6 @@ public class GodOfWorld {
     }
 
     public void updateWorld(GameWorld newWorld){
-
+        myWorld = newWorld;
     }
 }

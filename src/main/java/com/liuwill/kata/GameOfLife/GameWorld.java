@@ -82,4 +82,22 @@ public class GameWorld {
         WorldDimension dimension = new WorldDimension(width,height);
         return new GameWorld(dimension);
     }
+
+    public boolean equals(GameWorld gameWorld){
+        if(gameWorld == null){
+            return false;
+        }else if(!this.dimension.equals(gameWorld.getDimension())){
+            return false;
+        }
+
+        for(int i=0;i<this.dimension.getWidth(); i++){
+            for(int j=0;j<this.dimension.getHeight();j++){
+                if(!this.getLifeAt(i,j).equals(gameWorld.getLifeAt(i,j))){
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
 }

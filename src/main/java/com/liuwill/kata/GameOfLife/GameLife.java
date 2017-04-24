@@ -74,4 +74,18 @@ public class GameLife implements BaseLife{
     public void setY(int y) {
         this.y = y;
     }
+
+    public boolean equals(GameLife gameLife){
+        if(gameLife == null){
+            return false;
+        }else if(this.getX() != gameLife.getX()){
+            return false;
+        }else if(this.getY() != gameLife.getY()){
+            return false;
+        }else if(this.isAlive() != gameLife.isAlive()){
+            return false;
+        }
+
+        return true;
+    }
 }

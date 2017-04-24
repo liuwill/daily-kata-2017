@@ -31,4 +31,16 @@ public class WorldDimension {
     public void setHeight(int height) {
         this.height = height;
     }
+
+    public boolean equals(WorldDimension dimension){
+        if(dimension == null){
+            return false;
+        }else if(this.getHeight() != dimension.getHeight()){
+            return false;
+        }else if(this.getWidth() != dimension.getWidth()){
+            return false;
+        }
+
+        return true;
+    }
 }

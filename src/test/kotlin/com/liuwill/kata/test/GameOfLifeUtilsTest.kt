@@ -18,23 +18,40 @@ class GameOfLifeUtilsTest {
         val god = GodOfWorld()
         val theWorld = god.createWorld(4,8)
 
-        val source = arrayOf(
+        /*val source = arrayOf(
             arrayOf(0,0,0,0,0,0,0,0),
             arrayOf(0,0,0,0,1,0,0,0),
             arrayOf(0,0,0,1,1,0,0,0),
             arrayOf(0,0,0,0,0,0,0,0)
+        )*/
+        val source = arrayOf(
+            arrayOf(0,1,0,0,0,0,0,0),
+            arrayOf(1,0,0,0,1,0,0,0),
+            arrayOf(0,1,0,1,1,0,0,0),
+            arrayOf(0,0,0,0,0,0,0,0)
         )
         val lives = LifeCreator().generateLivedFromData(source,theWorld)
         theWorld.createLife(lives)
-        val newWorld = theWorld.grow()
+        assertEquals(theWorld, god.gameWorld)
 
         val originMap = WorldMapPrinter().print(theWorld)
-        val finalMap = WorldMapPrinter().print(newWorld)
-
         println(originMap)
 
-        println(finalMap)
-//        val expect:Int = 9234
-//        assertEquals(expect.toString(), "9234")
+        var itr = 0
+        var worldMark = true
+        while (itr++ <= 10 && worldMark){
+            val oldWorld = god.gameWorld
+            val newWorld = oldWorld.grow()
+
+            assertEquals(newWorld, god.gameWorld)
+
+            if(newWorld.equals(oldWorld)){
+                worldMark = false
+                continue
+            }
+
+            val newMap = WorldMapPrinter().print(newWorld)
+            println(newMap)
+        }
     }
 }
