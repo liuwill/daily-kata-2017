@@ -74,6 +74,7 @@ class GameOfLifeUtilsTest {
 
         val finalMap = WorldMapPrinter().print(gameWorld)
         println(finalMap)
+        println()
 
         assertEquals(finalMap, input)
     }

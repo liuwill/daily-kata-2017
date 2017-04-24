@@ -28,10 +28,11 @@ public class LifeCreator {
 
     public Integer[][] parseBitsFromMap(String mapStr){
         mapStr = mapStr.trim();
-
         String[] rows = mapStr.split("\n");
-        int width = rows.length;
-        int height = rows[0].length();
+
+        WorldDimension dimension = parseDimension(mapStr);
+        int width = dimension.getWidth();
+        int height = dimension.getHeight();
 
         Integer[][] resultBits = new Integer[width][height];
         int i = 0;
@@ -43,6 +44,16 @@ public class LifeCreator {
         }
 
         return resultBits;
+    }
+
+    public WorldDimension parseDimension(String input){
+        input = input.trim();
+
+        String[] rows = input.split("\n");
+        int width = rows.length;
+        int height = rows.length>0?rows[0].length():0;
+
+        return new WorldDimension(width,height);
     }
 
     public int parseBit(String bit){
