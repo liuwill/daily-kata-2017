@@ -36,7 +36,7 @@ class GameOfLifeUtilsTest {
         theWorld.createLife(lives)
         assertEquals(theWorld, god.gameWorld)
 
-        val originMap = WorldMapPrinter().print(theWorld)
+        val originMap = WorldMapPrinter().stringify(theWorld)
         println(originMap+"\n")
 
         var itr = 0
@@ -53,9 +53,8 @@ class GameOfLifeUtilsTest {
 
             assertFalse(newWorld.equals(oldWorld))
 
-            val newMap = WorldMapPrinter().print(newWorld)
-            println(newMap)
-            println()
+            //val newMap = WorldMapPrinter().stringify(newWorld)
+            WorldMapPrinter().println(newWorld)
         }
     }
 
@@ -72,10 +71,9 @@ class GameOfLifeUtilsTest {
 
         println(" --**--  Test Parse  --**-- ")
 
-        val finalMap = WorldMapPrinter().print(gameWorld)
-        println(finalMap)
-        println()
+        val finalMap = WorldMapPrinter().stringify(gameWorld)
 
+        WorldMapPrinter().println(gameWorld)
         assertEquals(finalMap, input)
     }
 }

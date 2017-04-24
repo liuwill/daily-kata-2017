@@ -4,7 +4,7 @@ package com.liuwill.kata.GameOfLife;
  * Created by videopls on 2017/4/23.
  */
 public class WorldMapPrinter {
-    public String print(GameWorld gameWorld){
+    public String stringify(GameWorld gameWorld){
         WorldDimension dimension = gameWorld.getDimension();
 
         StringBuilder stringBuilder = new StringBuilder();
@@ -20,5 +20,14 @@ public class WorldMapPrinter {
             stringBuilder.append("\n");
         }
         return stringBuilder.toString().trim();
+    }
+
+    public void print(GameWorld gameWorld){
+        System.out.println(stringify(gameWorld));
+    }
+
+    public void println(GameWorld gameWorld){
+        print(gameWorld);
+        System.out.println();
     }
 }
