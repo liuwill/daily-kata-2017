@@ -46,11 +46,19 @@ public class GameWorld {
             }
         }
 
-        godOfWorld.updateWorld(this);
+        if(godOfWorld != null) {
+            godOfWorld.updateWorld(this);
+        }
     }
 
     public GameWorld grow(){
-        GameWorld newWorld = godOfWorld.createWorld(dimension.getWidth(),dimension.getHeight());
+        GameWorld newWorld = null;
+        if(godOfWorld == null){
+            newWorld = GameWorld.makeWorld(dimension.getWidth(),dimension.getHeight());
+        }else{
+            newWorld = godOfWorld.createWorld(dimension.getWidth(),dimension.getHeight());
+        }
+
         List<GameLife> newLives = new ArrayList<>();
         for(int x = 0; x < dimension.getWidth(); x++){
             for(int y = 0; y < dimension.getHeight(); y++){

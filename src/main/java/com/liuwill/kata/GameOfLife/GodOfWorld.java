@@ -17,12 +17,13 @@ public class GodOfWorld {
         this.myWorldMap = new HashMap<>();
     }
 
-    public static GodOfWorld bigbang(){
+    public static GodOfWorld bigbang(int width,int height){
         GodOfWorld god = new GodOfWorld();
+        god.createWorld(width,height);
         return god;
     }
 
-    public GameWorld createWorld(int width,int height){
+    protected GameWorld createWorld(int width,int height){
         String name = getDayName(day++);
         return createWorld(name,width,height);
     }
@@ -31,6 +32,7 @@ public class GodOfWorld {
         GameWorld gameWorld = GameWorld.makeWorld(width,height);
         myWorldMap.put(name,gameWorld);
         gameWorld.setGodOfWorld(this);
+        myWorld = gameWorld;
 
         return gameWorld;
     }

@@ -19,6 +19,6 @@ public class WorldMapPrinter {
             }
             stringBuilder.append("\n");
         }
-        return stringBuilder.toString();
+        return stringBuilder.toString().trim();
     }
 }

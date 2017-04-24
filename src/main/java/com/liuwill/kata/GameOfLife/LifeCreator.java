@@ -25,4 +25,37 @@ public class LifeCreator {
 
         return resultList;
     }
+
+    public Integer[][] parseBitsFromMap(String mapStr){
+        mapStr = mapStr.trim();
+
+        String[] rows = mapStr.split("\n");
+        int width = rows.length;
+        int height = rows[0].length();
+
+        Integer[][] resultBits = new Integer[width][height];
+        int i = 0;
+        for(String line:rows){
+            for(int j=0;j<line.length();j++){
+                resultBits[i][j] = parseBit(line.substring(j,j+1));
+            }
+            i++;
+        }
+
+        return resultBits;
+    }
+
+    public int parseBit(String bit){
+        if(".".equals(bit)){
+            return 0;
+        }else if("*".equals(bit)){
+            return 1;
+        }
+
+        throw new IndexOutOfBoundsException();
+    }
+
+    public List<GameLife> parseLivesFromMap(String mapStr,GameWorld gameWorld){
+        return generateLivedFromData(parseBitsFromMap(mapStr),gameWorld);
+    }
 }
