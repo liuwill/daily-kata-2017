@@ -12,18 +12,19 @@ public class GodOfWorld {
     private GameWorld myWorld;
     private int day;
 
-    public GodOfWorld() {
+    private GodOfWorld() {
         day = 0;
         this.myWorldMap = new HashMap<>();
+    }
+
+    public static GodOfWorld bigbang(){
+        GodOfWorld god = new GodOfWorld();
+        return god;
     }
 
     public GameWorld createWorld(int width,int height){
         String name = getDayName(day++);
         return createWorld(name,width,height);
-    }
-
-    public String getDayName(int day){
-        return String.format("%d day", day);
     }
 
     private GameWorld createWorld(String name,int width,int height){
@@ -36,6 +37,14 @@ public class GodOfWorld {
 
     public GameWorld getGameWorld(){
         return myWorld;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public String getDayName(int day){
+        return String.format("%d day", day);
     }
 
     public GameWorld getGameWorldByName(String name) {

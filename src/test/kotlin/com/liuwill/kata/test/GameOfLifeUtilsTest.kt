@@ -15,7 +15,7 @@ class GameOfLifeUtilsTest {
     fun test() {
         println(" ---**--- Game Of Life ---**--- ")
 
-        val god = GodOfWorld()
+        val god = GodOfWorld.bigbang()
         val theWorld = god.createWorld(4,8)
 
         /*val source = arrayOf(
@@ -39,13 +39,13 @@ class GameOfLifeUtilsTest {
 
         var itr = 0
         var worldMark = true
-        while (itr++ <= 10 && worldMark){
+        while (itr++ < 10 && worldMark){
             val oldWorld = god.gameWorld
             val newWorld = oldWorld.grow()
 
             assertEquals(newWorld, god.gameWorld)
 
-            if(newWorld.equals(oldWorld)){
+            if(newWorld.equals(oldWorld) || !newWorld.isAlive){
                 worldMark = false
                 continue
             }

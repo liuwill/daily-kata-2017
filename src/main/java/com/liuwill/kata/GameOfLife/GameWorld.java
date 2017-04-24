@@ -10,10 +10,12 @@ public class GameWorld {
     private GodOfWorld godOfWorld;
     private WorldDimension dimension;
     private GameLife[][] worldMap;
+    private boolean isAlive;
 
     private GameWorld(WorldDimension dimension) {
         this.dimension = dimension;
 
+        isAlive = false;
         init(dimension);
     }
 
@@ -38,6 +40,10 @@ public class GameWorld {
             int x = life.getX();
             int y = life.getY();
             worldMap[x][y] = life;
+
+            if(life.isAlive()){
+                isAlive = true;
+            }
         }
 
         godOfWorld.updateWorld(this);
@@ -54,6 +60,10 @@ public class GameWorld {
 
         newWorld.createLife(newLives);
         return newWorld;
+    }
+
+    public boolean isAlive() {
+        return isAlive;
     }
 
     public GameLife getLifeAt(int x, int y){
