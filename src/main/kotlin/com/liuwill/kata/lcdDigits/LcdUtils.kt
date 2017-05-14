@@ -63,11 +63,14 @@ class LcdUtils {
         val inputCharArr = input.toCharArray()
 
         var resultArr = arrayOfNulls<Array<CharArray>>(inputCharArr.size)
-        var i = 0
+        inputCharArr
+            .map { encode(it) }
+            .forEachIndexed { i, singleResult -> resultArr[i] = singleResult }
+        /*var i = 0
         for(singleNum in inputCharArr){
             val singleResult = encode(singleNum)
             resultArr[i++] = singleResult
-        }
+        }*/
         return resultArr
     }
 
