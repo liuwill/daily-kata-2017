@@ -14,6 +14,11 @@ public class Border extends BaseEntity{
     }
 
     @Override
+    public String getRawIcon() {
+        return "";
+    }
+
+    @Override
     public boolean isMine() {
         return false;
     }

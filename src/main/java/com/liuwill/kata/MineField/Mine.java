@@ -14,6 +14,11 @@ public class Mine extends BaseEntity {
     }
 
     @Override
+    public String getRawIcon() {
+        return MineField.MINE_ICON;
+    }
+
+    @Override
     public boolean isMine() {
         return true;
     }

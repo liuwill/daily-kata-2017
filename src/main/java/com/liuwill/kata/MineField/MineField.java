@@ -26,12 +26,26 @@ public class MineField {
     }
 
     public void setMine(FieldPosition fieldPosition){
-        if(fieldPosition.getX() >= fieldDimension.getWidth() || fieldPosition.getX() <= 0
-                || fieldPosition.getY() >= fieldDimension.getHeight() || fieldPosition.getY() <= 0){
+        if(fieldPosition.getX() >= fieldDimension.getWidth() || fieldPosition.getX() < 0
+                || fieldPosition.getY() >= fieldDimension.getHeight() || fieldPosition.getY() < 0){
             throw new IndexOutOfBoundsException();
         }
 
+        int x = fieldPosition.getX();
+        int y = fieldPosition.getY();
 
+        mineField.put(x+":"+y, new Mine(new FieldPosition(x,y)));
+    }
+
+    public Map<String, BaseEntity> getMineField() {
+        return mineField;
+    }
+
+    public BaseEntity getItemFromPos(FieldPosition fieldPosition){
+        int x = fieldPosition.getX();
+        int y = fieldPosition.getY();
+
+        return mineField.get(x+":"+y);
     }
 
     public MineField MineFieldFactory(){

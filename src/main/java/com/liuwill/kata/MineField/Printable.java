@@ -5,4 +5,5 @@ package com.liuwill.kata.MineField;
  */
 public interface Printable {
     public String getIcon();
+    public String getRawIcon();
 }

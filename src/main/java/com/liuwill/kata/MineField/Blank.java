@@ -17,6 +17,11 @@ public class Blank extends BaseEntity{
     }
 
     @Override
+    public String getRawIcon() {
+        return MineField.BLANK_ICON;
+    }
+
+    @Override
     public boolean isMine() {
         return false;
     }

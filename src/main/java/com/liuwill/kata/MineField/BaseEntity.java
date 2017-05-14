@@ -16,4 +16,8 @@ public abstract class BaseEntity implements FieldEcho,Printable{
     public void findMine(){
         nearCount++;
     }
+
+    public FieldPosition getFieldPosition() {
+        return fieldPosition;
+    }
 }

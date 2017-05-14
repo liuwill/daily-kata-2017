@@ -1,6 +1,7 @@
 package com.liuwill.kata.test
 
 import com.liuwill.kata.MineField.FieldDimension
+import com.liuwill.kata.MineField.FieldPosition
 import com.liuwill.kata.MineField.FieldReader
 import com.liuwill.kata.MineField.MineField
 import org.junit.Test
@@ -31,5 +32,14 @@ class MineFieldUtilsTest {
 
         val fieldDimension = FieldDimension(x,y)
         val mineField = MineField(fieldDimension)
+
+        val firstPos = FieldPosition(0,0)
+        mineField.setMine(firstPos)
+
+        val mineFieldMap = mineField.mineField
+        val theItem = mineField.getItemFromPos(firstPos)
+
+        println(theItem.fieldPosition)
+        println("====================="+theItem.count+theItem.icon)
     }
 }
