@@ -4,7 +4,6 @@ package com.liuwill.kata.MineField;
  * Created by videopls on 2017/5/15.
  */
 public class Block implements FieldEcho,Printable {
-    private FieldPosition fieldPosition;
     private BaseEntity blockItem;
     protected Integer nearCount;
 
@@ -15,7 +14,10 @@ public class Block implements FieldEcho,Printable {
 
     @Override
     public String getIcon() {
-        return blockItem.getIcon();
+        if(blockItem.isMine()){
+            return blockItem.getIcon();
+        }
+        return nearCount.toString();
     }
 
     @Override

@@ -1,9 +1,6 @@
 package com.liuwill.kata.test
 
-import com.liuwill.kata.MineField.FieldDimension
-import com.liuwill.kata.MineField.FieldPosition
-import com.liuwill.kata.MineField.FieldReader
-import com.liuwill.kata.MineField.MineField
+import com.liuwill.kata.MineField.*
 import org.junit.Test
 import kotlin.test.assertEquals
 
@@ -51,5 +48,10 @@ class MineFieldUtilsTest {
         println(theItem.fieldPosition.toString()+theItem.count+theItem.icon)
         println(secItem.fieldPosition.toString()+secItem.count+secItem.icon)
         println(thirdItem.fieldPosition.toString()+thirdItem.count+thirdItem.icon)
+
+        println(MineFieldPrinter().printRawField(mineField))
+        println()
+        println(MineFieldPrinter().printField(mineField))
+        println()
     }
 }
