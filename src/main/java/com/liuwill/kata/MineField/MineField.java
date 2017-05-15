@@ -11,7 +11,7 @@ public class MineField {
     public static final String BLANK_ICON = ".";
 
     private FieldDimension fieldDimension;
-    private Map<String,BaseEntity> mineField;
+    private Map<FieldPosition,Block> mineField;
 
     public MineField(FieldDimension fieldDimension){
         this.fieldDimension = fieldDimension;
@@ -20,7 +20,9 @@ public class MineField {
 
         for(int x=0;x<fieldDimension.getWidth();x++){
             for(int y=0;y<fieldDimension.getHeight();y++){
-                mineField.put(x+":"+y, new Blank(new FieldPosition(x,y)));
+                FieldPosition fieldPosition = new FieldPosition(x,y);
+                BaseEntity baseEntity = new Blank(new FieldPosition(x,y));
+                mineField.put(fieldPosition, new Block(baseEntity));
             }
         }
     }
@@ -34,18 +36,23 @@ public class MineField {
         int x = fieldPosition.getX();
         int y = fieldPosition.getY();
 
-        mineField.put(x+":"+y, new Mine(new FieldPosition(x,y)));
+        BaseEntity baseEntity = new Mine(new FieldPosition(x,y));
+        Block block = mineField.get(new FieldPosition(x,y));
+
+        block.setBlockItem(baseEntity);
+
+        for(FieldPosition neighbourPosition : block.getFieldPosition().getNeighbours(fieldDimension)){
+            Block neighbourBlock = mineField.get(neighbourPosition);
+            neighbourBlock.updateCount();
+        }
     }
 
-    public Map<String, BaseEntity> getMineField() {
+    public Map<FieldPosition, Block> getMineField() {
         return mineField;
     }
 
-    public BaseEntity getItemFromPos(FieldPosition fieldPosition){
-        int x = fieldPosition.getX();
-        int y = fieldPosition.getY();
-
-        return mineField.get(x+":"+y);
+    public Block getItemFromPos(FieldPosition fieldPosition){
+        return mineField.get(fieldPosition);
     }
 
     public MineField MineFieldFactory(){

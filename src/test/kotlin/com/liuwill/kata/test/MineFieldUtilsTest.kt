@@ -33,13 +33,23 @@ class MineFieldUtilsTest {
         val fieldDimension = FieldDimension(x,y)
         val mineField = MineField(fieldDimension)
 
+        val mineList = FieldReader.readMineFieldFromSource(DEFAULT_SAMPLE)
+        for(fieldPos in mineList){
+            mineField.setMine(fieldPos)
+        }
         val firstPos = FieldPosition(0,0)
-        mineField.setMine(firstPos)
+        val secondPos = FieldPosition(0,1)
+        val thirdPos = FieldPosition(1,0)
 
-        val mineFieldMap = mineField.mineField
+        //val mineFieldMap = mineField.mineField
         val theItem = mineField.getItemFromPos(firstPos)
+        val secItem = mineField.getItemFromPos(secondPos)
+        val thirdItem = mineField.getItemFromPos(thirdPos)
 
         println(theItem.fieldPosition)
-        println("====================="+theItem.count+theItem.icon)
+        println(secItem.fieldPosition)
+        println(theItem.fieldPosition.toString()+theItem.count+theItem.icon)
+        println(secItem.fieldPosition.toString()+secItem.count+secItem.icon)
+        println(thirdItem.fieldPosition.toString()+thirdItem.count+thirdItem.icon)
     }
 }
