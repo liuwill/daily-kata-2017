@@ -6,10 +6,13 @@ package com.liuwill.kata.MineField;
 public class FieldDimension {
     private int width;
     private int height;
+    private String id;
 
     public FieldDimension(int width, int height) {
         this.width = width;
         this.height = height;
+
+        id = width+":"+height;
     }
 
     public int size(){
@@ -42,6 +45,21 @@ public class FieldDimension {
         }
 
         return true;
+    }
+
+    public boolean equals(Object o){
+        if (!(o instanceof FieldDimension) || o == null)
+            return false;
+        FieldDimension fieldDimension = (FieldDimension) o;
+
+        if(!fieldDimension.id.equals(this.id)){
+            return false;
+        }
+        return true;
+    }
+
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
     }
 
     @Override
