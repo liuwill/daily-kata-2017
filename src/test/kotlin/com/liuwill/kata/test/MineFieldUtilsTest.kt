@@ -11,7 +11,7 @@ class MineFieldUtilsTest {
     private val DEFAULT_SAMPLE = "*...\n..*.\n....\n"
 
     @Test fun testReader() {
-        val mineList = FieldReader.readMineFieldFromSource(DEFAULT_SAMPLE)
+        val mineList = FieldReader.readMineFieldPositionsFromSource(DEFAULT_SAMPLE)
 
         val expectLength = DEFAULT_SAMPLE.filter { it == '*' }.length
         assertEquals(expectLength,mineList.size)
@@ -30,7 +30,7 @@ class MineFieldUtilsTest {
         val fieldDimension = FieldDimension(x,y)
         val mineField = MineField(fieldDimension)
 
-        val mineList = FieldReader.readMineFieldFromSource(DEFAULT_SAMPLE)
+        val mineList = FieldReader.readMineFieldPositionsFromSource(DEFAULT_SAMPLE)
         for(fieldPos in mineList){
             mineField.setMine(fieldPos)
         }
