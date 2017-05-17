@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by videopls on 2017/5/14.
+ * Created by LiuWill on 2017/5/14.
  */
 public class FieldReader {
     public static List<FieldPosition> readMineFieldPositionsFromSource(String rawFieldStr){

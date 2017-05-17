@@ -21,6 +21,9 @@ public class MineFieldAcceptableDefs {
 
     @Given("^a field which height is (\\d+) and width is (\\d+)$")
     public void samplesHasList(int height,int width) throws Throwable {
+        System.out.println(" ---**--- Mine Field ---**--- ");
+        System.out.println(" Width: "+width+" Height: "+height);
+
         this.width = width;
         this.height = height;
     }
@@ -41,10 +44,10 @@ public class MineFieldAcceptableDefs {
 
         MineFieldPrinter mineFieldPrinter = new MineFieldPrinter();
         assertEquals(rawFieldInput, mineFieldPrinter.printRawField(mineField));
-        assertEquals(realTargetOut, mineFieldPrinter.printField(mineField));
-
         System.out.println();
         System.out.println(rawFieldInput);
+
+        assertEquals(realTargetOut, mineFieldPrinter.printField(mineField));
         System.out.println();
         System.out.println(realTargetOut);
     }

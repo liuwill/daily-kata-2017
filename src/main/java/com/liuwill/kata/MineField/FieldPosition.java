@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by videopls on 2017/5/14.
+ * Created by LiuWill on 2017/5/14.
  */
 public class FieldPosition {
     private String id;
@@ -34,9 +34,9 @@ public class FieldPosition {
             int posX = x + calculator[0];
             int posY = y + calculator[1];
 
-            if(posX < 0 || posX > fieldDimension.getWidth()){
+            if(posX < 0 || posX >= fieldDimension.getWidth()){
                 continue;
-            }else if(posY < 0 || posY > fieldDimension.getHeight()){
+            }else if(posY < 0 || posY >= fieldDimension.getHeight()){
                 continue;
             }
 

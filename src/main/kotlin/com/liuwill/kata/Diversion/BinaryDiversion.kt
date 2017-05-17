@@ -1,7 +1,7 @@
 package com.liuwill.kata.Diversion
 
 /**
- * Created by liuwill on 2017/3/14.
+ * Created by LiuWill on 2017/3/14.
  */
 
 class BinaryDiversion{

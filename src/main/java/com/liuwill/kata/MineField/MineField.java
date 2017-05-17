@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * Created by videopls on 2017/5/14.
+ * Created by LiuWill on 2017/5/14.
  */
 public class MineField {
     public static final String MINE_ICON = "*";

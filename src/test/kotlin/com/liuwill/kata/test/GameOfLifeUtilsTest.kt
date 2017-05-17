@@ -10,7 +10,7 @@ import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 /**
- * Created by videopls on 2017/4/23.
+ * Created by LiuWill on 2017/4/23.
  */
 class GameOfLifeUtilsTest {
     @Test

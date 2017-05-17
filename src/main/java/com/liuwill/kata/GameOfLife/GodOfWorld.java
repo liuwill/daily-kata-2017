@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by videopls on 2017/4/23.
+ * Created by LiuWill on 2017/4/23.
  */
 public class GodOfWorld {
     private Map<String,GameWorld> myWorldMap;

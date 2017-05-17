@@ -1,7 +1,7 @@
 package com.liuwill.kata.lcdDigits
 
 /**
- * Created by videopls on 2017/3/26.
+ * Created by LiuWill on 2017/3/26.
  */
 class LcdUtils {
     fun encode(source: Char): Array<CharArray> {

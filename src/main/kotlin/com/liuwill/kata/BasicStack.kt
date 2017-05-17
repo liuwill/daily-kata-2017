@@ -1,7 +1,7 @@
 package com.liuwill.kata
 
 /**
- * Created by videopls on 2017/3/30.
+ * Created by LiuWill on 2017/3/30.
  */
 class BasicStack<T> {
     var balanceStack:Array<Any?> = emptyArray()

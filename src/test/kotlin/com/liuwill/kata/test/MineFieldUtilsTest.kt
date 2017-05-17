@@ -6,10 +6,11 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 /**
- * Created by videopls on 2017/5/14.
+ * Created by Liu Will on 2017/5/14.
  */
 class MineFieldUtilsTest {
     private val DEFAULT_SAMPLE = "*...\n..*.\n....\n"
+    private val DEFAULT_SAMPLE_RESULT = "*211\n12*1\n0111"
 
     @Test fun testReader() {
         val mineList = FieldReader.readMineFieldPositionsFromSource(DEFAULT_SAMPLE)
@@ -17,10 +18,12 @@ class MineFieldUtilsTest {
         val expectLength = DEFAULT_SAMPLE.filter { it == '*' }.length
         assertEquals(expectLength,mineList.size)
 
+        println()
         for(item in mineList){
             println(item)
         }
         println("Test MineField Reader")
+        println()
     }
 
     @Test fun testCreateMineField() {
@@ -44,16 +47,27 @@ class MineFieldUtilsTest {
         val secItem = mineField.getItemFromPos(secondPos)
         val thirdItem = mineField.getItemFromPos(thirdPos)
 
-        println(theItem.fieldPosition)
-        println(secItem.fieldPosition)
-        println(theItem.fieldPosition.toString()+theItem.count+theItem.icon)
-        println(secItem.fieldPosition.toString()+secItem.count+secItem.icon)
-        println(thirdItem.fieldPosition.toString()+thirdItem.count+thirdItem.icon)
+        assertEquals(theItem.fieldPosition.x,0)
+        assertEquals(theItem.fieldPosition.y,0)
 
+        assertEquals(secItem.fieldPosition.x,0)
+        assertEquals(secItem.fieldPosition.y,1)
+
+        assertEquals(thirdItem.fieldPosition.x,1)
+        assertEquals(thirdItem.fieldPosition.y,0)
+
+        assertEquals(MineField.MINE_ICON,theItem.icon)
+        assertEquals(secItem.count.toString(),secItem.icon)
+        assertEquals(thirdItem.count.toString(),thirdItem.icon)
+        assertEquals("2",thirdItem.icon)
+        assertEquals("1",secItem.icon)
+
+        println()
         println(MineFieldPrinter().printRawField(mineField))
         println()
         println(MineFieldPrinter().printField(mineField))
-        println()
+        assertEquals(DEFAULT_SAMPLE.trim(),MineFieldPrinter().printRawField(mineField))
+        assertEquals(DEFAULT_SAMPLE_RESULT.trim(),MineFieldPrinter().printField(mineField))
     }
 
     @Test fun testReadDimension(){

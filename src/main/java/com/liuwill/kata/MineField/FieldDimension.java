@@ -1,7 +1,7 @@
 package com.liuwill.kata.MineField;
 
 /**
- * Created by videopls on 2017/5/14.
+ * Created by LiuWill on 2017/5/14.
  */
 public class FieldDimension {
     private int width;

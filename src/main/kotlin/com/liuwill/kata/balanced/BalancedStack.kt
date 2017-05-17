@@ -1,7 +1,7 @@
 package com.liuwill.kata.balanced
 
 /**
- * Created by videopls on 2017/3/22.
+ * Created by LiuWill on 2017/3/22.
  */
 class BalancedStack {
     var balanceStack:Array<Char?> = emptyArray()

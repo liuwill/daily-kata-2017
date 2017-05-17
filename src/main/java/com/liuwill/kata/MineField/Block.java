@@ -1,7 +1,7 @@
 package com.liuwill.kata.MineField;
 
 /**
- * Created by videopls on 2017/5/15.
+ * Created by LiuWill on 2017/5/15.
  */
 public class Block implements FieldEcho,Printable {
     private BaseEntity blockItem;

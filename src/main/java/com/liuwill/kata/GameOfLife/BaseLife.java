@@ -1,7 +1,7 @@
 package com.liuwill.kata.GameOfLife;
 
 /**
- * Created by videopls on 2017/4/23.
+ * Created by LiuWill on 2017/4/23.
  */
 public interface BaseLife {
     public boolean isAlive();

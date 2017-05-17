@@ -12,7 +12,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by videopls on 2017/3/9.
+ * Created by LiuWill on 2017/3/9.
  */
 public class DiversionStepdefs {
     List<Integer> bitList;

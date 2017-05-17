@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 /**
- * Created by videopls on 2017/3/30.
+ * Created by LiuWill on 2017/3/30.
  */
 class BasicStackTest {
     @Test

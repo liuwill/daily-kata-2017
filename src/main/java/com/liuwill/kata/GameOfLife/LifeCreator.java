@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by videopls on 2017/4/23.
+ * Created by LiuWill on 2017/4/23.
  */
 public class LifeCreator {
     public List<GameLife> generateLivedFromData(Integer[][] source,GameWorld gameWorld){

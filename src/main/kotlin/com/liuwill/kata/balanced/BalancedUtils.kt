@@ -1,7 +1,7 @@
 package com.liuwill.kata.balanced
 
 /**
- * Created by videopls on 2017/3/18.
+ * Created by LiuWill on 2017/3/18.
  */
 class BalancedUtils {
     val BRACKET_ELEMENT = "{}[]()"
