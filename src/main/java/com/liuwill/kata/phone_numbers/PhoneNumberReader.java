@@ -3,7 +3,7 @@ package com.liuwill.kata.phone_numbers;
 /**
  * Created by Liu Will on 2017/6/14.
  */
-public class PhoneNumberReader {
+public abstract class PhoneNumberReader {
     public static Contactor contactorFactory(String sample) {
         if(sample == null){
             throw new IllegalArgumentException();
@@ -23,7 +23,7 @@ public class PhoneNumberReader {
         return new Contactor(name, joinStr(targetPhoneItems));
     }
 
-    public static String joinStr(String[] strList){
+    private static String joinStr(String[] strList){
         StringBuilder targetBuilder = new StringBuilder();
         for(String item :strList){
             targetBuilder.append(item);
