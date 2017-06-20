@@ -6,8 +6,7 @@ import com.liuwill.kata.phone_numbers.PhoneNumbersArbiter;
 import org.junit.AfterClass;
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * Created by Liu Will on 2017/6/14.
@@ -25,6 +24,24 @@ public class PhoneNumbersArbiterTest {
 
         assertTrue(PhoneNumbersArbiter.detectInConsistent(c1,c2));
         assertFalse(PhoneNumbersArbiter.detectInConsistent(c2,c3));
+    }
+
+    @Test
+    public void testArbiter(){
+        String[] rawContactors = {"Bob 91 12 54 26" , "Alice 97 625 992" , "Emergency 911"};
+
+        PhoneNumbersArbiter arbiter = new PhoneNumbersArbiter();
+        assertTrue(arbiter.isConsistent());
+        assertNotEquals(arbiter.getContactors().size(), rawContactors.length);
+        assertEquals(0, arbiter.getContactors().size());
+
+        for(String rawContactor: rawContactors){
+            Contactor contactor = PhoneNumberReader.contactorFactory(rawContactor);
+            arbiter.addContactor(contactor);
+        }
+
+        assertEquals(arbiter.getContactors().size(), rawContactors.length);
+        assertFalse(arbiter.isConsistent());
     }
 
     @AfterClass

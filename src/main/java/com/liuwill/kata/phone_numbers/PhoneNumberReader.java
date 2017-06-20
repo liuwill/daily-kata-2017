@@ -4,6 +4,18 @@ package com.liuwill.kata.phone_numbers;
  * Created by Liu Will on 2017/6/14.
  */
 public abstract class PhoneNumberReader {
+    public static PhoneNumbersArbiter arbiterFactory(String[] rawContactors){
+        PhoneNumbersArbiter phoneNumbersArbiter = new PhoneNumbersArbiter();
+
+        for(String rawContactor : rawContactors){
+            Contactor contactor = contactorFactory(rawContactor);
+
+            phoneNumbersArbiter.addContactor(contactor);
+        }
+
+        return phoneNumbersArbiter;
+    }
+
     public static Contactor contactorFactory(String sample) {
         if(sample == null){
             throw new IllegalArgumentException();

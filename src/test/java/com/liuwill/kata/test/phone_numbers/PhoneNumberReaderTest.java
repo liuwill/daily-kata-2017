@@ -2,12 +2,16 @@ package com.liuwill.kata.test.phone_numbers;
 
 import com.liuwill.kata.phone_numbers.Contactor;
 import com.liuwill.kata.phone_numbers.PhoneNumberReader;
+import com.liuwill.kata.phone_numbers.PhoneNumbersArbiter;
 import org.junit.AfterClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 /**
@@ -16,6 +20,22 @@ import static org.junit.Assert.assertNotNull;
 public class PhoneNumberReaderTest {
     @Rule
     public ExpectedException thrown= ExpectedException.none();
+
+    @Test
+    public void testArbiter(){
+        String[] rawContactors = {"Bob 91 12 54 26" , "Alice 97 625 992" , "Emergency 911"};
+        PhoneNumbersArbiter arbiter = PhoneNumberReader.arbiterFactory(rawContactors);
+
+        List<Contactor> arbiterContactors = arbiter.getContactors();
+        assertEquals(rawContactors.length, arbiterContactors.size());
+
+        for(int i=0;i<rawContactors.length;i++){
+            Contactor newContactor = PhoneNumberReader.contactorFactory(rawContactors[i]);
+            assertEquals(newContactor,arbiterContactors.get(i));
+        }
+
+        assertFalse(arbiter.isConsistent());
+    }
 
     @Test
     public void readSingleLineError() throws IllegalArgumentException {
