@@ -28,13 +28,13 @@ public class MineField {
     }
 
     public void setMine(FieldPosition fieldPosition) {
-        if (fieldPosition.getX() >= fieldDimension.getWidth() || fieldPosition.getX() < 0
-                || fieldPosition.getY() >= fieldDimension.getHeight() || fieldPosition.getY() < 0) {
+        if (fieldPosition.getPosX() >= fieldDimension.getWidth() || fieldPosition.getPosX() < 0
+                || fieldPosition.getPosY() >= fieldDimension.getHeight() || fieldPosition.getPosY() < 0) {
             throw new IndexOutOfBoundsException();
         }
 
-        int x = fieldPosition.getX();
-        int y = fieldPosition.getY();
+        int x = fieldPosition.getPosX();
+        int y = fieldPosition.getPosY();
 
         BaseEntity baseEntity = new Mine(new FieldPosition(x, y));
         Block block = mineField.get(new FieldPosition(x, y));

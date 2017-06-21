@@ -16,8 +16,8 @@ import static org.junit.Assert.assertEquals;
 public class DiversionBasicStepDef {
     List<String> binaryArr;
 
-    @Given("^a list of binary number$")
-    public void aListOfBinaryNumber() throws Throwable {
+    @Given("^give list of binary number$")
+    public void giveListOfBinaryNumber() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
     }
 

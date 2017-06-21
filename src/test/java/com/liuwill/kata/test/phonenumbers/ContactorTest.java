@@ -2,13 +2,14 @@ package com.liuwill.kata.test.phonenumbers;
 
 import com.liuwill.kata.phonenumbers.Contactor;
 import com.liuwill.kata.phonenumbers.PhoneNumberReader;
-import org.junit.AfterClass;
-import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
+import org.junit.AfterClass;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;

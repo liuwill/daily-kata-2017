@@ -10,7 +10,12 @@ import org.junit.runner.RunWith;
  */
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"src/test/resources/features/minefield"}, strict = true, monochrome = true, format = "junit:output", snippets = SnippetType.CAMELCASE)
+@CucumberOptions(
+    features = {"src/test/resources/features/minefield"},
+    strict = true,
+    monochrome = true,
+    format = "junit:output",
+    snippets = SnippetType.CAMELCASE)
 public class MineFieldCukesTest {
     // this is the adapter/bridge code
     // between cucumber jvm and junit

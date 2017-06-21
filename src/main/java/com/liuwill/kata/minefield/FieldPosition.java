@@ -8,31 +8,33 @@ import java.util.List;
  */
 public class FieldPosition {
     private String id;
-    private Integer x;
-    private Integer y;
+    private Integer posX;
+    private Integer posY;
 
     public FieldPosition(int x, int y) {
-        this.x = x;
-        this.y = y;
+        this.posX = x;
+        this.posY = y;
 
         id = x + ":" + y;
     }
 
-    public Integer getX() {
-        return x;
+    public Integer getPosX() {
+        return posX;
     }
 
-    public Integer getY() {
-        return y;
+    public Integer getPosY() {
+        return posY;
     }
 
     public List<FieldPosition> getNeighbours(FieldDimension fieldDimension) {
         ArrayList<FieldPosition> neighbours = new ArrayList();
 
-        int[][] calculators = {{-1, -1}, {0, -1}, {1, -1}, {-1, 0}, {1, 0}, {-1, 1}, {0, 1}, {1, 1}};
+        int[][] calculators = {
+            {-1, -1}, {0, -1}, {1, -1}, {-1, 0}, {1, 0}, {-1, 1}, {0, 1}, {1, 1}
+        };
         for (int[] calculator : calculators) {
-            int posX = x + calculator[0];
-            int posY = y + calculator[1];
+            int posX = this.posX + calculator[0];
+            int posY = this.posY + calculator[1];
 
             if (posX < 0 || posX >= fieldDimension.getWidth()) {
                 continue;
@@ -46,7 +48,7 @@ public class FieldPosition {
     }
 
     public String toString() {
-        return "Position [x:" + x + " - y:" + y + "]";
+        return "Position [posX:" + posX + " - posY:" + posY + "]";
     }
 
     public boolean equals(Object o) {

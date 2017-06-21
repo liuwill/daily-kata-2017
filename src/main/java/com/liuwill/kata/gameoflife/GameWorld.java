@@ -124,7 +124,9 @@ public class GameWorld {
     }
 
     public int hashCode() {
-        String id = godOfWorld.hashCode() + ":" + Arrays.hashCode(worldMap) + ":" + dimension.hashCode();
+        String id = godOfWorld.hashCode()
+            + ":" + Arrays.hashCode(worldMap)
+            + ":" + dimension.hashCode();
         return id.hashCode();
     }
 }

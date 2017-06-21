@@ -14,7 +14,10 @@ public class PhoneNumberMainTest {
     @Test
     public void testMore() {
         String[] wrongContactors = {"Bob 91 12 54 26", "Alice 97 625 992", "Emergency 911"};
-        String[] rightContactors = {"Bob 91 12 54 26", "Odin 234 324", "Alice 97 625 992", "Emergency 87 53 35", "Will 78 4352 2345"};
+        String[] rightContactors = {
+            "Bob 91 12 54 26", "Odin 234 324", "Alice 97 625 992",
+            "Emergency 87 53 35", "Will 78 4352 2345"
+        };
 
         assertFalse(PhoneNumberMain.consistent(wrongContactors));
         assertTrue(PhoneNumberMain.consistent(rightContactors));

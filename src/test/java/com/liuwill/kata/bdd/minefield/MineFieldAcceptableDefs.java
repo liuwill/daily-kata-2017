@@ -39,7 +39,6 @@ public class MineFieldAcceptableDefs {
 
     @Then("^preview field output is \\[([\\s\\S]+)\\]$")
     public void groupCountNumbersAre(String targetOut) throws Throwable {
-        String realTargetOut = targetOut.replaceAll("\\\\n", "\n");
         MineField mineField = FieldReader.readMineFieldFromSource(rawFieldInput);
 
         MineFieldPrinter mineFieldPrinter = new MineFieldPrinter();
@@ -47,6 +46,7 @@ public class MineFieldAcceptableDefs {
         System.out.println();
         System.out.println(rawFieldInput);
 
+        String realTargetOut = targetOut.replaceAll("\\\\n", "\n");
         assertEquals(realTargetOut, mineFieldPrinter.printField(mineField));
         System.out.println();
         System.out.println(realTargetOut);

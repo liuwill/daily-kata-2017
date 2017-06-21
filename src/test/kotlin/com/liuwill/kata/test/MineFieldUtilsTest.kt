@@ -47,14 +47,14 @@ class MineFieldUtilsTest {
         val secItem = mineField.getItemFromPos(secondPos)
         val thirdItem = mineField.getItemFromPos(thirdPos)
 
-        assertEquals(theItem.fieldPosition.x, 0)
-        assertEquals(theItem.fieldPosition.y, 0)
+        assertEquals(theItem.fieldPosition.posX, 0)
+        assertEquals(theItem.fieldPosition.posY, 0)
 
-        assertEquals(secItem.fieldPosition.x, 0)
-        assertEquals(secItem.fieldPosition.y, 1)
+        assertEquals(secItem.fieldPosition.posX, 0)
+        assertEquals(secItem.fieldPosition.posY, 1)
 
-        assertEquals(thirdItem.fieldPosition.x, 1)
-        assertEquals(thirdItem.fieldPosition.y, 0)
+        assertEquals(thirdItem.fieldPosition.posX, 1)
+        assertEquals(thirdItem.fieldPosition.posY, 0)
 
         assertEquals(MineField.MINE_ICON, theItem.icon)
         assertEquals(secItem.count.toString(), secItem.icon)
@@ -90,7 +90,7 @@ class MineFieldUtilsTest {
 
         val mineLines = DEFAULT_SAMPLE.trim().split("\n")
 
-        mineList.forEach { assertEquals(MineField.MINE_ICON, mineLines[it.y][it.x].toString()) }
+        mineList.forEach { assertEquals(MineField.MINE_ICON, mineLines[it.posY][it.posX].toString()) }
     }
 
     @Test fun testReadMineField() {
