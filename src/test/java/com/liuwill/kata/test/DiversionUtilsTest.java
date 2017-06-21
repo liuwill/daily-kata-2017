@@ -1,11 +1,12 @@
 package com.liuwill.kata.test;
 
-import com.liuwill.kata.Diversion.DiversionHelper;
-import com.liuwill.kata.Diversion.DiversionMain;
-import org.junit.AfterClass;
-import org.junit.Test;
+import com.liuwill.kata.diversion.DiversionHelper;
+import com.liuwill.kata.diversion.DiversionMain;
 
 import java.util.Random;
+
+import org.junit.AfterClass;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -16,48 +17,51 @@ import static org.junit.Assert.assertTrue;
  */
 public class DiversionUtilsTest {
     @Test
-    public void checkCombinationMatch(){
+    public void checkCombinationMatch() {
         assertFalse(DiversionMain.match("111"));
         assertFalse(DiversionMain.match("0011"));
         assertTrue(DiversionMain.match("1010101"));
     }
 
-    @Test public void generateCombinations(){
+    @Test
+    public void generateCombinations() {
         int count = 5;
         Random random = new Random();
-        for(;count>0;count--){
+        for (; count > 0; count--) {
             int bit = random.nextInt(20);
             String[] combinations = DiversionMain.build(bit);
             int bitSqrt = DiversionMain.countCombinations(bit);
 
-            assertEquals(bitSqrt,combinations.length);
+            assertEquals(bitSqrt, combinations.length);
         }
     }
 
-    @Test public void testFibonacciCombination(){
-        for(int i=3;i<10;i++){
+    @Test
+    public void testFibonacciCombination() {
+        for (int i = 3; i < 10; i++) {
             String[] actualArr = DiversionMain.build(i);
             int actual = DiversionMain.countMatch(actualArr);
 
-            String[] expectArr1 = DiversionMain.build(i-1);
-            String[] expectArr2 = DiversionMain.build(i-2);
-            int expect = DiversionMain.countMatch(expectArr1)+DiversionMain.countMatch(expectArr2);
+            String[] expectArr1 = DiversionMain.build(i - 1);
+            String[] expectArr2 = DiversionMain.build(i - 2);
+            int expect = DiversionMain.countMatch(expectArr1) + DiversionMain.countMatch(expectArr2);
 
-            assertEquals(expect,actual);
+            assertEquals(expect, actual);
         }
     }
 
-    @Test public void testFibonacciValue(){
+    @Test
+    public void testFibonacciValue() {
         int number = 5;
 
         int actual = DiversionHelper.count(number);
-        int expect = DiversionHelper.count(number-1) + DiversionHelper.count(number-2);
+        int expect = DiversionHelper.count(number - 1) + DiversionHelper.count(number - 2);
 
-        assertEquals(expect,actual);
+        assertEquals(expect, actual);
     }
 
     @AfterClass
-    public static void outputResult(){
+    public static void outputResult() {
         System.out.println("Diversion Utils Test");
     }
 }

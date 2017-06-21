@@ -7,56 +7,57 @@ class BalancedUtils {
     val BRACKET_ELEMENT = "{}[]()"
     val LEFT_BRACKET_ELEMENT = "{[("
     val RIGHT_BRACKET_ELEMENT = "}])"
-    companion object{
-        val LEFT_BRACE='{'
-        val RIGHT_BRACE='}'
-        val LEFT_BRACKET='['
-        val RIGHT_BRACKET=']'
-        val LEFT_PARENTHESES='('
-        val RIGHT_PARENTHESES=')'
+
+    companion object {
+        val LEFT_BRACE = '{'
+        val RIGHT_BRACE = '}'
+        val LEFT_BRACKET = '['
+        val RIGHT_BRACKET = ']'
+        val LEFT_PARENTHESES = '('
+        val RIGHT_PARENTHESES = ')'
     }
 
-    fun isLeagueInput(input:Char):Boolean{
+    fun isLeagueInput(input: Char): Boolean {
         return BRACKET_ELEMENT.contains(input)
     }
 
-    fun isLeft(input:Char):Boolean{
+    fun isLeft(input: Char): Boolean {
         return LEFT_BRACKET_ELEMENT.contains(input)
     }
 
     fun compareElementBalance(left: Char, right: Char): Boolean {
-        if(!isLeagueInput(left) || !isLeagueInput(right)){
+        if (!isLeagueInput(left) || !isLeagueInput(right)) {
             return false
         }
-        return BRACKET_ELEMENT.contains(left.toString()+right) && BRACKET_ELEMENT.indexOf(left)%2==0
+        return BRACKET_ELEMENT.contains(left.toString() + right) && BRACKET_ELEMENT.indexOf(left) % 2 == 0
     }
 
-    fun countLeft(str:String):Int{
+    fun countLeft(str: String): Int {
         val chrArr = str.toCharArray()
-        val count:Int = chrArr.count { isLeft(it) }
+        val count: Int = chrArr.count { isLeft(it) }
         return count
     }
 
-    fun compute(rawStr :String) :Int{
+    fun compute(rawStr: String): Int {
         var balanceStack = BalancedStack(rawStr.length)
         /*val count = (0..rawStr.length-1)
                 .map { rawStr[it] }
                 .count { isLeft(it) }*/
         var realCount = 0
 
-        for(i in 0..rawStr.length-1){
+        for (i in 0..rawStr.length - 1) {
             val chr = rawStr[i]
-            if(isLeft(chr)){
+            if (isLeft(chr)) {
                 balanceStack.push(chr)
-            }else if(!isLeft(chr)){
-                if(balanceStack.size()<1){
+            } else if (!isLeft(chr)) {
+                if (balanceStack.size() < 1) {
                     return 0
                 }
 
-                val left:Char = balanceStack.pop()!!
-                if(compareElementBalance(left,chr)){
+                val left: Char = balanceStack.pop()!!
+                if (compareElementBalance(left, chr)) {
                     realCount++
-                }else{
+                } else {
                     return 0
                 }
             }

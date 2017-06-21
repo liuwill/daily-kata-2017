@@ -1,6 +1,6 @@
 package com.liuwill.kata.bdd.diversion;
 
-import com.liuwill.kata.Diversion.DiversionMain;
+import com.liuwill.kata.diversion.DiversionMain;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -33,6 +33,6 @@ public class DiversionBasicStepDef {
 
         String[] actualArr = new String[binaryArr.size()];
         int actual = DiversionMain.countMatch(binaryArr.toArray(actualArr));
-        assertEquals(expect,actual);
+        assertEquals(expect, actual);
     }
 }

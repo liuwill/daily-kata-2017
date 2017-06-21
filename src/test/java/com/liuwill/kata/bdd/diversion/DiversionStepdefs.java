@@ -1,7 +1,7 @@
 package com.liuwill.kata.bdd.diversion;
 
-import com.liuwill.kata.Diversion.DiversionHelper;
-import com.liuwill.kata.Diversion.DiversionMain;
+import com.liuwill.kata.diversion.DiversionHelper;
+import com.liuwill.kata.diversion.DiversionMain;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -36,8 +36,8 @@ public class DiversionStepdefs {
         //throw new PendingException();
         List<Integer> resultList = listTable.asList(Integer.class);
 
-        assertEquals(bitList.size(),resultList.size());
-        for(int i = 0; i < resultList.size();i++){
+        assertEquals(bitList.size(), resultList.size());
+        for (int i = 0; i < resultList.size(); i++) {
             int bit = bitList.get(i);
             int result = resultList.get(i);
             String[] verifyArr = DiversionMain.build(bit);

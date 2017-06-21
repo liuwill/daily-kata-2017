@@ -4,35 +4,37 @@ package com.liuwill.kata.balanced
  * Created by LiuWill on 2017/3/22.
  */
 class BalancedStack(length: Int) {
-    private var realBalanceStack:Array<Char?> = emptyArray()
-    var balanceStack:Array<Char?>
+    private var realBalanceStack: Array<Char?> = emptyArray()
+    var balanceStack: Array<Char?>
         get() = this.realBalanceStack.clone()
-        set(value) {this.realBalanceStack = value.copyOf()}
+        set(value) {
+            this.realBalanceStack = value.copyOf()
+        }
 
-    var top:Int = 0
+    var top: Int = 0
 
-    fun push(input:Char){
+    fun push(input: Char) {
         realBalanceStack[top] = input
         top++
     }
 
-    fun pop():Char?{
-        if(top == 0){
+    fun pop(): Char? {
+        if (top == 0) {
             return null
         }
         return realBalanceStack[--top]
     }
 
-    fun size():Int{
+    fun size(): Int {
         return top
     }
 
-    fun length():Int{
+    fun length(): Int {
         return Companion.maxLength
     }
 
     companion object {
-        var maxLength:Int = 0
+        var maxLength: Int = 0
     }
 
     init {

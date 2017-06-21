@@ -1,7 +1,6 @@
 package com.liuwill.kata.test
 
-import com.liuwill.kata.BasicStack
-import com.liuwill.kata.NumberNames.NumberNamesUtils
+import com.liuwill.kata.numbernames.NumberNamesUtils
 import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
@@ -12,7 +11,7 @@ import kotlin.test.assertTrue
 class NumberNamesUtilsTest {
     @Test
     fun test() {
-        val expect:Int = 9234
+        val expect: Int = 9234
 
         assertTrue { NumberNamesUtils().getString(expect) is String }
         assertEquals(expect.toString(), NumberNamesUtils().getString(expect))
@@ -20,27 +19,27 @@ class NumberNamesUtilsTest {
     }
 
     @Test
-    fun testSplit(){
+    fun testSplit() {
         val expect1 = 12132423
         val expect2 = 121324
         val expect3 = 12132
-        val expects = arrayOf(expect1,expect2,expect3)
+        val expects = arrayOf(expect1, expect2, expect3)
 
-        for(expect in expects){
+        for (expect in expects) {
             val actual = NumberNamesUtils().splitNumber(expect)
             actual.forEach(::print)
             println()
 
-            println("Length:"+actual.size)
+            println("Length:" + actual.size)
             actual.forEach {
                 assertTrue {
                     it!!.length <= 3
                 }
             }
 
-            val expectLen = Math.ceil(expect.toString().length.toDouble()/3).toInt()
-            assertEquals(expectLen,actual.size)
-            assertEquals(expect.toString(),actual.joinToString(""))
+            val expectLen = Math.ceil(expect.toString().length.toDouble() / 3).toInt()
+            assertEquals(expectLen, actual.size)
+            assertEquals(expect.toString(), actual.joinToString(""))
         }
 
         /*val actual1 = NumberNamesUtils().splitNumber(expect1)
