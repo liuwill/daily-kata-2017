@@ -48,14 +48,11 @@ public class Contactor implements Comparable<Contactor>{
     }
 
     public boolean equals(Object o){
-        if (!(o instanceof Contactor) || o == null)
+        if (o == null || !(o instanceof Contactor))
             return false;
         Contactor fieldPosition = (Contactor) o;
 
-        if(!fieldPosition.id.equals(this.id)){
-            return false;
-        }
-        return true;
+        return fieldPosition.id.equals(this.id);
     }
 
     public int hashCode() {

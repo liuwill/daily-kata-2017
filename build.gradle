@@ -18,7 +18,9 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'findbugs'
 apply plugin: 'application'
-apply plugin: "kotlin"
+apply plugin: 'kotlin'
+// apply plugin: 'checkstyle'
+apply plugin: 'pmd'
 
 sourceCompatibility = 1.8
 
@@ -110,3 +112,15 @@ tasks.withType(FindBugs) {
     }
 }
 // ] FindBugs End**/
+
+/*
+tasks.withType(Checkstyle) {
+    reports {
+        xml.enabled false
+        html.enabled true
+        html.stylesheet resources.text.fromFile('config/xsl/checkstyle-custom.xsl')
+    }
+    configFile = file('${project.rootDir}/config/checkstyle/checkstyle.xml')
+    //toolVersion = '6.7'
+}
+*/

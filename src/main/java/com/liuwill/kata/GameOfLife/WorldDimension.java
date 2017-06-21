@@ -32,15 +32,23 @@ public class WorldDimension {
         this.height = height;
     }
 
-    public boolean equals(WorldDimension dimension){
-        if(dimension == null){
+    public boolean equals(Object object){
+        if (object == null || !(object instanceof WorldDimension)){
             return false;
-        }else if(this.getHeight() != dimension.getHeight()){
+        }
+        WorldDimension dimension = (WorldDimension) object;
+
+        if(this.getHeight() != dimension.getHeight()){
             return false;
         }else if(this.getWidth() != dimension.getWidth()){
             return false;
         }
 
         return true;
+    }
+
+    public int hashCode() {
+        String id = width+":"+height;
+        return id.hashCode();
     }
 }

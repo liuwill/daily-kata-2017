@@ -1,6 +1,7 @@
 package com.liuwill.kata.GameOfLife;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -101,10 +102,13 @@ public class GameWorld {
         return new GameWorld(dimension);
     }
 
-    public boolean equals(GameWorld gameWorld){
-        if(gameWorld == null){
+    public boolean equals(Object object){
+        if (object == null || !(object instanceof GameWorld)){
             return false;
-        }else if(!this.dimension.equals(gameWorld.getDimension())){
+        }
+        GameWorld gameWorld = (GameWorld) object;
+
+        if(!this.dimension.equals(gameWorld.getDimension())){
             return false;
         }
 
@@ -117,5 +121,10 @@ public class GameWorld {
         }
 
         return true;
+    }
+
+    public int hashCode() {
+        String id = godOfWorld.hashCode()+":"+ Arrays.hashCode(worldMap)+":" + dimension.hashCode();
+        return id.hashCode();
     }
 }

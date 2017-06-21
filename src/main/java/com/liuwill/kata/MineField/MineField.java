@@ -55,8 +55,8 @@ public class MineField {
         return mineField.get(fieldPosition);
     }
 
-    public MineField MineFieldFactory(){
-        return new MineField(null);
+    public MineField mineFieldFactory(int width,int height){
+        return new MineField(new FieldDimension(width,height));
     }
 
     public FieldDimension getFieldDimension() {

@@ -75,10 +75,13 @@ public class GameLife implements BaseLife{
         this.y = y;
     }
 
-    public boolean equals(GameLife gameLife){
-        if(gameLife == null){
+    public boolean equals(Object object){
+        if (object == null || !(object instanceof GameLife)){
             return false;
-        }else if(this.getX() != gameLife.getX()){
+        }
+        GameLife gameLife = (GameLife) object;
+
+        if(this.getX() != gameLife.getX()){
             return false;
         }else if(this.getY() != gameLife.getY()){
             return false;
@@ -87,5 +90,10 @@ public class GameLife implements BaseLife{
         }
 
         return true;
+    }
+
+    public int hashCode() {
+        String id = x+":"+y+":"+myWorld.hashCode();
+        return id.hashCode();
     }
 }

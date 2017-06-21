@@ -50,14 +50,11 @@ public class FieldPosition {
     }
 
     public boolean equals(Object o){
-        if (!(o instanceof FieldPosition) || o == null)
+        if (o == null || !(o instanceof FieldPosition))
             return false;
         FieldPosition fieldPosition = (FieldPosition) o;
 
-        if(!fieldPosition.id.equals(this.id)){
-            return false;
-        }
-        return true;
+        return fieldPosition.id.equals(this.id);
     }
 
     public int hashCode() {

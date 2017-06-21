@@ -48,14 +48,11 @@ public class FieldDimension {
     }
 
     public boolean equals(Object o){
-        if (!(o instanceof FieldDimension) || o == null)
+        if (o == null || !(o instanceof FieldDimension))
             return false;
         FieldDimension fieldDimension = (FieldDimension) o;
 
-        if(!fieldDimension.id.equals(this.id)){
-            return false;
-        }
-        return true;
+        return fieldDimension.id.equals(this.id);
     }
 
     public int hashCode() {

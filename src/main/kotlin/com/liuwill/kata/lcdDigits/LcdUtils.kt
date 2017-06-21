@@ -15,9 +15,7 @@ class LcdUtils {
     }
 
     fun compare(first:Array<CharArray>,second:Array<CharArray>):Boolean{
-        if(first == null || second == null){
-            return false
-        }else if(first.size != second.size){
+        if(first.size != second.size){
             return false
         }
 
@@ -26,14 +24,15 @@ class LcdUtils {
                 return false
             }
 
+            (0..(first[i].size-1))
+                    .asSequence()
+                    .filter { first[i][it] != second[i][it] }
+                    .forEach { return false }
             /*for(j in 0..(first[i].size-1)){
                 if(first[i][j] != second[i][j]){
                     return false
                 }
             }*/
-            (0..(first[i].size-1))
-                .filter { first[i][it] != second[i][it] }
-                .forEach { return false }
         }
         return true
     }
@@ -62,8 +61,9 @@ class LcdUtils {
     fun parse(input:String): Array<Array<CharArray>?> {
         val inputCharArr = input.toCharArray()
 
-        var resultArr = arrayOfNulls<Array<CharArray>>(inputCharArr.size)
+        val resultArr = arrayOfNulls<Array<CharArray>>(inputCharArr.size)
         inputCharArr
+            .asSequence()
             .map { encode(it) }
             .forEachIndexed { i, singleResult -> resultArr[i] = singleResult }
         /*var i = 0
@@ -75,7 +75,7 @@ class LcdUtils {
     }
 
     fun print(input: Array<Array<CharArray>?>, space:Int = 1):String{
-        var resultArr = arrayOf(
+        val resultArr = arrayOf(
             "","",""
         )
 
