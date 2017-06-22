@@ -39,19 +39,29 @@ public class PhoneNumberReaderTest {
     }
 
     @Test
-    public void readSingleLineError() throws IllegalArgumentException {
+    public void readNullError() throws IllegalArgumentException{
         thrown.expect(IllegalArgumentException.class);
         PhoneNumberReader.contactorFactory(null);
+    }
 
+    @Test
+    public void readBlankError() throws IllegalArgumentException{
         thrown.expect(IllegalArgumentException.class);
         PhoneNumberReader.contactorFactory("");
+    }
 
+    @Test
+    public void readNameOblyError() throws IllegalArgumentException{
         thrown.expect(IllegalArgumentException.class);
         PhoneNumberReader.contactorFactory("Bob");
+    }
 
+    @Test
+    public void readWrongNumberError() throws IllegalArgumentException{
         thrown.expect(IllegalArgumentException.class);
         PhoneNumberReader.contactorFactory("Bob 91 liu 54 26");
     }
+
 
     @Test
     public void readSingleLine() {

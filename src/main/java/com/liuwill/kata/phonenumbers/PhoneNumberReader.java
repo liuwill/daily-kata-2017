@@ -1,5 +1,7 @@
 package com.liuwill.kata.phonenumbers;
 
+import java.util.regex.Pattern;
+
 /**
  * Created by Liu Will on 2017/6/14.
  */
@@ -32,7 +34,11 @@ public abstract class PhoneNumberReader {
         String[] targetPhoneItems = new String[sampleItmes.length - 1];
         System.arraycopy(sampleItmes, 1, targetPhoneItems, 0, targetPhoneItems.length);
 
-        return new Contactor(name, joinStr(targetPhoneItems));
+        String phoneNumber = joinStr(targetPhoneItems);
+        if(!isNumeric(phoneNumber)){
+            throw new IllegalArgumentException();
+        }
+        return new Contactor(name, phoneNumber);
     }
 
     private static String joinStr(String[] strList) {
@@ -42,5 +48,10 @@ public abstract class PhoneNumberReader {
         }
 
         return targetBuilder.toString();
+    }
+
+    private static boolean isNumeric(String str){
+        Pattern pattern = Pattern.compile("[0-9]*");
+        return pattern.matcher(str).matches();
     }
 }
