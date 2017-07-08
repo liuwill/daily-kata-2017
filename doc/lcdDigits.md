@@ -3,17 +3,19 @@ integer value using a 3x3 grid of space, underscore, and
 pipe characters for each digit. Each digit is shown below 
 (using a dot instead of a space)
 
+```
 ._.   ...   ._.   ._.   ...   ._.   ._.   ._.   ._.   ._.
 |.|   ..|   ._|   ._|   |_|   |_.   |_.   ..|   |_|   |_|
 |_|   ..|   |_.   ._|   ..|   ._|   |_|   ..|   |_|   ..|
 
+```
 
 Example: 910
-
+```
 ._. ... ._.
 |_| ..| |.|
 ..| ..| |_|
-
+```
 
 # 解题思路：
 先将每个数字存储成一个对应的三位数组，数组中有'.'、'_'、'|'三种符号。

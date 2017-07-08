@@ -1,5 +1,5 @@
 Spell out a number. For example
-
+```
       99 --> ninety nine
      300 --> three hundred
      310 --> three hundred and ten
@@ -10,5 +10,6 @@ Spell out a number. For example
 43112603 --> forty three million, one hundred and
              twelve thousand,
              six hundred and three
+```
 
 [Source http://rosettacode.org]

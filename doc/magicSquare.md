@@ -4,6 +4,7 @@ so that adding them up in any direction results in a constant sum.
 
 You have the following values:
 
+```
 1.0
 1.5
 2.0
@@ -13,6 +14,7 @@ You have the following values:
 4.0
 4.5
 5.0
+```
 
 You need to arrange them in a 3 x 3 matrix so that:
 
