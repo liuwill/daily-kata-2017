@@ -4,14 +4,16 @@ package com.liuwill.kata.fizzbuzz;
  * Created by Liu Will on 2017/7/19.
  */
 public class FizzBuzzTranslator {
-    public static final String FIZZ_WORD = "fizz";
-    public static final String BUZZ_WORD = "buzz";
+    public static final String FIZZ_WORD = "Fizz";
+    public static final String BUZZ_WORD = "Buzz";
 
     public static String translate(Integer i) {
         StringBuilder builder = new StringBuilder();
         if (isFizz(i)) {
             builder.append(FIZZ_WORD);
-        } else if (isBuzz(i)) {
+        }
+
+        if (isBuzz(i)) {
             builder.append(BUZZ_WORD);
         }
 
