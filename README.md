@@ -13,4 +13,7 @@ currently, I have finished 7 times exercises.
  - [number names](./doc/numberNames.md)
  - [phone numbers](./doc/phoneNumbers.md)
  
+ - [fizz buzz](./doc/fizzBuzz.md) - still working
+ 
  - [magic square](./doc/magicSquare.md) - still working
+ - [tiny maze](./doc/tinyMaze.md) - still working
