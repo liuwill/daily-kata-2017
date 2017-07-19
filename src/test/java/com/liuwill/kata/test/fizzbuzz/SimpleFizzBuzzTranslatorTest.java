@@ -8,9 +8,9 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by Liu Will on 2017/7/19.
  */
-public class FizzTranslatorTest {
+public class SimpleFizzBuzzTranslatorTest {
     @Test
-    public void testTranslateOne(){
+    public void testTranslateOne() {
         String expect = "1";
         String result = FizzBuzzTranslator.translate(1);
 
@@ -18,7 +18,7 @@ public class FizzTranslatorTest {
     }
 
     @Test
-    public void testTranslateTwo(){
+    public void testTranslateTwo() {
         String expect = "2";
         String result = FizzBuzzTranslator.translate(2);
 
@@ -26,17 +26,25 @@ public class FizzTranslatorTest {
     }
 
     @Test
-    public void testTranslateFizz(){
-        String expect = "fizz";
+    public void testTranslateFizz() {
+        String expect = "Fizz";
         String result = FizzBuzzTranslator.translate(3);
 
         assertEquals(expect, result);
     }
 
     @Test
-    public void testTranslateBuzz(){
-        String expect = "buzz";
+    public void testTranslateBuzz() {
+        String expect = "Buzz";
         String result = FizzBuzzTranslator.translate(5);
+
+        assertEquals(expect, result);
+    }
+
+    @Test
+    public void testTranslateFizzBuzz() {
+        String expect = "FizzBuzz";
+        String result = FizzBuzzTranslator.translate(3 * 5);
 
         assertEquals(expect, result);
     }
