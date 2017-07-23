@@ -1,3 +1,5 @@
+> 使用Java语言实现，[查看代码](../src/main/java/com/liuwill/kata/combinednumber)
+
 ## 待解问题
 Write a function accepting a list of non negative integers, 
 and returning their largest possible combined number

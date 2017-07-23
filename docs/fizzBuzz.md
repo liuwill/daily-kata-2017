@@ -1,3 +1,7 @@
+> 使用Java语言实现，[查看代码](../src/main/java/com/liuwill/kata/fizzbuzz)
+
+## 问题描述
+
 Write a program that prints the numbers from 1 to 100.
 But for multiples of three print "Fizz" instead of the
 number and for the multiples of five print "Buzz". For

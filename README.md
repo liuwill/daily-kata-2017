@@ -3,17 +3,22 @@
 > just exercise for java & kotlin skills
 >, maybe other JVM based language will be included as well
 
+## 练习进展
+
 currently, I have finished 7 times exercises.
 
- - [combined number](./doc/combinedNumber.md)
- - [diversion](./doc/diversion.md)
- - [game of life](./doc/gameOfLife.md)
- - [lcd digits](./doc/lcdDigits.md)
- - [mine field](./doc/mineField.md)
- - [number names](./doc/numberNames.md)
- - [phone numbers](./doc/phoneNumbers.md)
+ - [combined number](./docs/combinedNumber.md)
+ - [diversion](./docs/diversion.md)
+ - [game of life](./docs/gameOfLife.md)
+ - [lcd digits](./docs/lcdDigits.md)
+ - [mine field](./docs/mineField.md)
+ - [number names](./docs/numberNames.md)
+ - [phone numbers](./docs/phoneNumbers.md)
  
- - [fizz buzz](./doc/fizzBuzz.md) - still working
+ - [fizz buzz](./docs/fizzBuzz.md) - still working
  
- - [magic square](./doc/magicSquare.md) - still working
- - [tiny maze](./doc/tinyMaze.md) - still working
+ - [magic square](./docs/magicSquare.md) - still working
+ - [tiny maze](./docs/tinyMaze.md) - still working
+ 
+## 持续集成状态：
+ [GitLab](.docs/README_GITLAB.md)
