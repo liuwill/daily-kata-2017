@@ -1,8 +1,8 @@
 
 # Daily Kata Project 2017
  
-[![build status](https://gitlab.com/liuwill/daily-kata-2017/badges/master/build.svg)](https://gitlab.com/liuwill/daily-kata-2017/commits/master)
-[![coverage report](https://gitlab.com/liuwill/daily-kata-2017/badges/master/coverage.svg)](https://gitlab.com/liuwill/daily-kata-2017/commits/master)
+[![build status](https://gitlab.com/liuwill/daily-kata-2017/badges/master/build.svg)](https://liuwill.gitlab.io/daily-kata-2017/)
+[![coverage report](https://gitlab.com/liuwill/daily-kata-2017/badges/master/coverage.svg)](https://liuwill.gitlab.io/daily-kata-2017/coverage/)
 
 > just exercise for java & kotlin skills
 >, maybe other JVM based language will be included as well

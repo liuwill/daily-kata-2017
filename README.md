@@ -21,4 +21,4 @@ currently, I have finished 7 times exercises.
  - [tiny maze](./docs/tinyMaze.md) - still working
  
 ## 持续集成状态：
- [GitLab](.docs/README_GITLAB.md)
+ [GitLab](./docs/README_GITLAB.md)
