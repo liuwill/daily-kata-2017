@@ -2,6 +2,10 @@
 > - [源代码](../src/main/java/com/liuwill/kata/fizzbuzz)
 > - [测试代码](../src/test/java/com/liuwill/kata/test/fizzbuzz)
 
+## 进度
+
+[![Beta](http://progressed.io/bar/100?title=done)]()
+
 ## 问题描述
 
 Write a program that prints the numbers from 1 to 100.
