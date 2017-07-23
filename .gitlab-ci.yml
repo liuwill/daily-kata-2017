@@ -1,12 +1,11 @@
 gradle-build:
-  image: gradle:4-jdk-8
+  image: gradle:4.0-jdk8
   stage: build
   script:
     - gradle test --info
     - gradle jacocoRootReport
   artifacts:
     paths:
-      - build/*.jar
       - build/reports/jacoco/test/html
       - build/reports/tests/test
 
