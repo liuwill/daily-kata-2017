@@ -1,4 +1,6 @@
-> 使用Java语言实现，[查看代码](../src/main/java/com/liuwill/kata/fizzbuzz)
+> 使用Java语言实现，
+> - [源代码](../src/main/java/com/liuwill/kata/fizzbuzz)
+> - [测试代码](../src/test/java/com/liuwill/kata/test/fizzbuzz)
 
 ## 问题描述
 

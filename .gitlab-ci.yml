@@ -1,0 +1,25 @@
+gradle-build:
+  image: gradle:4-jdk-8
+  stage: build
+  script:
+    - gradle test --info
+    - gradle jacocoRootReport
+  artifacts:
+    paths:
+      - build/*.jar
+      - build/reports/jacoco/test/html
+      - build/reports/tests/test
+
+pages:
+  stage: deploy
+  dependencies:
+    - gradle-build
+  script:
+    - mv build/reports/tests/test public/
+    - mv build/reports/jacoco/test/html public/coverage
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+  only:
+    - master
