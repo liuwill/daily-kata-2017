@@ -14,8 +14,9 @@ currently, I have finished 7 times exercises.
  - [mine field](./docs/mineField.md)
  - [number names](./docs/numberNames.md)
  - [phone numbers](./docs/phoneNumbers.md)
+ - [fizz buzz](./docs/fizzBuzz.md)
  
- - [fizz buzz](./docs/fizzBuzz.md) - still working
+ - [isbn](./docs/ISBN.md) - still working
  
  - [magic square](./docs/magicSquare.md) - still working
  - [tiny maze](./docs/tinyMaze.md) - still working
