@@ -1,4 +1,4 @@
-# Daily Kata Project 2017
+# Daily Kata Project 2017 🥋
 
 > just exercise for java & kotlin skills
 >, maybe other JVM based language will be included as well
