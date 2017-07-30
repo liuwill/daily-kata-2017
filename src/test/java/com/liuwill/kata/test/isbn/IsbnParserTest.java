@@ -37,4 +37,64 @@ public class IsbnParserTest {
 
     assertFalse(parser.isISBN(sample));
   }
+
+  @Test
+  public void testWithBlank() {
+    String sample = "978 0 471 48648 0";
+    String expectCode = "0";
+    IsbnParser parser = new IsbnParser();
+
+    String code = parser.generateCheckCode(sample);
+
+    assertEquals(code.length(), 1);
+    assertEquals(expectCode, code);
+    assertTrue(sample.endsWith(code));
+
+    assertTrue(parser.isISBN(sample));
+  }
+
+  @Test
+  public void testWithSplit() {
+    String sample = "978-0-262-13472-9";
+    String expectCode = "9";
+    IsbnParser parser = new IsbnParser();
+
+    String code = parser.generateCheckCode(sample);
+
+    assertEquals(code.length(), 1);
+    assertEquals(expectCode, code);
+    assertTrue(sample.endsWith(code));
+
+    assertTrue(parser.isISBN(sample));
+  }
+
+  @Test
+  public void testShortISBN() {
+    String sample = "0-470-84525-2";
+    String expectCode = "2";
+    IsbnParser parser = new IsbnParser();
+
+    String code = parser.generateCheckCode(sample);
+
+    assertEquals(code.length(), 1);
+    assertEquals(expectCode, code);
+    assertTrue(sample.endsWith(code));
+
+    assertTrue(parser.isISBN(sample));
+  }
+
+  @Test
+  public void testShortISBNWithX() {
+    String sample = "7-144-00316-X";
+    String expectCode = "X";
+    IsbnParser parser = new IsbnParser();
+
+    String code = parser.generateCheckCode(sample);
+
+    assertEquals(code.length(), 1);
+    assertEquals(expectCode, code);
+    assertTrue(sample.endsWith(code));
+
+    assertTrue(parser.isISBN(sample));
+  }
 }
