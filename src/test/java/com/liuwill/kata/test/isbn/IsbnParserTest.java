@@ -97,4 +97,31 @@ public class IsbnParserTest {
 
     assertTrue(parser.isISBN(sample));
   }
+
+  @Test
+  public void testShortISBNEndWith0() {
+    String sample = "0-321-14653-0";
+    String expectCode = "0";
+    IsbnParser parser = new IsbnParser();
+
+    String code = parser.generateCheckCode(sample);
+
+    assertEquals(code.length(), 1);
+    assertEquals(expectCode, code);
+    assertTrue(sample.endsWith(code));
+
+    assertTrue(parser.isISBN(sample));
+  }
+
+  @Test
+  public void testIllegelISBN() {
+    String sample = "7-144-00316-=X";
+    String sampleLong = "714400324352345234516";
+    String sampleShort = "123421354";
+
+    IsbnParser parser = new IsbnParser();
+    assertFalse(parser.isISBN(sample));
+    assertFalse(parser.isISBN(sampleShort));
+    assertFalse(parser.isISBN(sampleLong));
+  }
 }
