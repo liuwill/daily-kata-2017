@@ -7,7 +7,7 @@ buildscript {
 
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.github.ksoichiro:gradle-console-reporter:0.5.0'
+        // classpath 'com.github.ksoichiro:gradle-console-reporter:0.5.0'
     }
 }
 
@@ -23,7 +23,7 @@ apply plugin: 'kotlin'
 apply plugin: 'checkstyle'
 apply plugin: 'pmd'
 apply plugin: 'jacoco'
-apply plugin: 'com.github.ksoichiro.console.reporter'
+// apply plugin: 'com.github.ksoichiro.console.reporter'
 
 sourceCompatibility = 1.8
 
@@ -141,4 +141,34 @@ jacocoTestReport {
 
         // html.destination = "${buildDir}/jacocoHtml"
     }
+}
+
+task parseCoverageSummary(dependsOn: jacocoTestReport) {
+  group = 'ci'
+  doLast {
+    def testReportFile = file("${project.buildDir}/reports/jacoco/test/jacocoTestReport.xml")
+
+    def xmlParser = new XmlParser()
+    xmlParser.setFeature("http://apache.org/xml/features/disallow-doctype-decl", false)
+    xmlParser.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+    def reportDom = xmlParser.parse(testReportFile)
+    def coverdInstruct = Integer.parseInt(reportDom.counter[0].@covered)
+    def missedInstruct = Integer.parseInt(reportDom.counter[0].@missed)
+
+    def coverageRate = Math.round(coverdInstruct * 10000 / (coverdInstruct + missedInstruct)) / 100
+    println ''
+    println '========= Coverage summary ========='
+    println "${project.name} :  ${coverageRate}%"
+    println ''
+
+    reportDom.counter.each { counterData ->
+      def coverdInstructLine = Integer.parseInt(counterData.@covered)
+      def missedInstructLine = Integer.parseInt(counterData.@missed)
+      def totalLine = coverdInstructLine + missedInstructLine
+
+      def coverageRateLine = Math.round(coverdInstructLine * 10000 / (coverdInstructLine + missedInstructLine)) / 100
+      println "${counterData.@type} :  ${coverageRateLine}%  (${coverdInstructLine}/${totalLine})"
+    }
+    println '===================================='
+  }
 }
