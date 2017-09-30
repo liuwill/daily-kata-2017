@@ -1,4 +1,7 @@
 # Daily Kata Project 2017 🥋
+  [![Build Status][travis-image]][travis-url]
+  [![Code Climate][quality-image]][quality-url]
+  [![Codecov branch][codecov-image]][codecov-url]
 
 > just exercise for java & kotlin skills
 >, maybe other JVM based language will be included as well
@@ -29,3 +32,13 @@ currently, I have finished 7 times exercises.
  
 ## 持续集成状态：
  [GitLab](./docs/README_GITLAB.md)
+ 
+
+[travis-image]: https://img.shields.io/travis/liuwill/daily-kata-2017/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/liuwill/daily-kata-2017
+[quality-image]: https://img.shields.io/codeclimate/github/liuwill/daily-kata-2017.svg?style=flat-square
+[quality-url]: https://codeclimate.com/github/liuwill/daily-kata-2017
+[appveyor-image]: https://img.shields.io/appveyor/ci/liuwill/daily-kata-2017/master.svg?style=flat-square
+[appveyor-url]: https://ci.appveyor.com/project/liuwill/daily-kata-2017
+[codecov-image]: https://img.shields.io/codecov/c/github/liuwill/daily-kata-2017.svg?style=flat-square
+[codecov-url]: https://codecov.io/gh/liuwill/daily-kata-2017
