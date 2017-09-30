@@ -27,13 +27,13 @@ public class TemplateTranslatorTest {
     @Parameterized.Parameters
     public static Collection expectPairs() {
         return Arrays.asList(new Object[][]{
-                {1, "1"},
-                {2, "2"},
-                {3, "Fizz"},
-                {5, "Buzz"},
-                {6, "Fizz"},
-                {10, "Buzz"},
-                {15, "FizzBuzz"}
+            {1, "1"},
+            {2, "2"},
+            {3, "Fizz"},
+            {5, "Buzz"},
+            {6, "Fizz"},
+            {10, "Buzz"},
+            {15, "FizzBuzz"}
         });
     }
 
