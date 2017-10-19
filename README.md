@@ -1,5 +1,5 @@
 # Daily Kata Project 2017 🥋
-  [![Build Status][circleci-image]][circleci-url]
+  [![CircleCI Status][circleci-image]][circleci-url]
   [![Code Climate][quality-image]][quality-url]
   [![Codecov branch][codecov-image]][codecov-url]
 
@@ -32,7 +32,6 @@ currently, I have finished 7 times exercises.
  
 ## 持续集成状态：
  [GitLab](./docs/README_GITLAB.md)
- [![CircleCI branch]()]()
 
 
 [circleci-image]: https://img.shields.io/circleci/project/github/liuwill/daily-kata-2017/master.svg?style=flat-square
