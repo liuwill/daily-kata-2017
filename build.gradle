@@ -157,7 +157,7 @@ task parseCoverageSummary(dependsOn: jacocoTestReport) {
 
     def coverageRate = Math.round(coverdInstruct * 10000 / (coverdInstruct + missedInstruct)) / 100
     println ''
-    println '========= Coverage summary ========='
+    println '=========== Coverage summary ==========='
     println "${project.name} :  ${coverageRate}%"
     println ''
 
@@ -169,7 +169,7 @@ task parseCoverageSummary(dependsOn: jacocoTestReport) {
       def coverageRateLine = Math.round(coverdInstructLine * 10000 / (coverdInstructLine + missedInstructLine)) / 100
       println "${counterData.@type} :  ${coverageRateLine}%  (${coverdInstructLine}/${totalLine})"
     }
-    println '===================================='
+    println '========================================'
   }
 }
 
@@ -182,7 +182,8 @@ task codeCoverageReport(type: JacocoReport) {
 
   reports {
     xml.enabled true
-    xml.destination "${buildDir}/reports/jacoco/report.xml"
+    xml.setDestination(file("${buildDir}/reports/jacoco/report.xml"))
+    // xml.destination "${buildDir}/reports/jacoco/report.xml"
     html.enabled false
     csv.enabled false
   }
