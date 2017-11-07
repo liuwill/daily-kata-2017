@@ -18,8 +18,10 @@ You have the following values:
 
 You need to arrange them in a 3 x 3 matrix so that:
 
+```
 The sums of numbers in each row = magic number
 The sums of numbers in each column = magic number
 The sums of numbers in each diagonal = magic number
+```
 
 Source: https://github.com/gigasquid/wonderland-clojure-katas

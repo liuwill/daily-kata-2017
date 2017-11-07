@@ -19,7 +19,8 @@ currently, I have finished 7 times exercises.
  - [phone numbers](./docs/phoneNumbers.md)
  - [fizz buzz](./docs/fizzBuzz.md)
  
- - [isbn](./docs/ISBN.md) - still working
+ - [isbn](./docs/ISBN.md)
+ - [roman numerals](./docs/romanNumerals.md)
  
  - [magic square](./docs/magicSquare.md) - still working
  - [tiny maze](./docs/tinyMaze.md) - still working
