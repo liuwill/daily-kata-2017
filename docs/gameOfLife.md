@@ -1,3 +1,10 @@
+> 使用Java语言实现，
+> - [源代码](../src/main/java/com/liuwill/kata/gameoflife)
+> - [测试代码](../src/test/kotlin/com/liuwill/kata/test/GameOfLifeUtilsTest.kt)
+
+
+## 康威的生命游戏
+
 Your task is to write a program to calculate the next
 generation of Conway's game of life, given any starting
 position.

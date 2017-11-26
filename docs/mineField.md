@@ -1,3 +1,10 @@
+> 使用Java语言实现，
+> - [源代码](../src/main/java/com/liuwill/kata/minefield)
+> - [测试代码](../src/test/java/com/liuwill/kata/bdd/minefield)
+
+
+## 扫雷地图
+
 A field of N posX M squares is represented by N lines
 of exactly M characters each.
 The character '*' represents a mine.
