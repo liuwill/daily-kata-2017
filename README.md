@@ -1,7 +1,7 @@
 # Daily Kata Project 2017 🥋
   [![CircleCI Status][circleci-image]][circleci-url]
-  [![Code Climate][quality-image]][quality-url]
   [![Codecov branch][codecov-image]][codecov-url]
+  [![Maintainability][quality-image]][quality-url]
 
 > just exercise for java & kotlin skills
 >, maybe other JVM based language will be included as well
@@ -39,8 +39,8 @@ currently, I have finished 7 times exercises.
 [circleci-url]: https://circleci.com/gh/liuwill/daily-kata-2017
 [travis-image]: https://img.shields.io/travis/liuwill/daily-kata-2017/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/liuwill/daily-kata-2017
-[quality-image]: https://img.shields.io/codeclimate/github/liuwill/daily-kata-2017.svg?style=flat-square
-[quality-url]: https://codeclimate.com/github/liuwill/daily-kata-2017
+[quality-image]: https://api.codeclimate.com/v1/badges/313dc3cc5407762707e3/maintainability
+[quality-url]: https://codeclimate.com/github/liuwill/daily-kata-2017/maintainability
 [appveyor-image]: https://img.shields.io/appveyor/ci/liuwill/daily-kata-2017/master.svg?style=flat-square
 [appveyor-url]: https://ci.appveyor.com/project/liuwill/daily-kata-2017
 [codecov-image]: https://img.shields.io/codecov/c/github/liuwill/daily-kata-2017.svg?style=flat-square
