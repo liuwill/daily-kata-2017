@@ -2,7 +2,7 @@ gradle-build:
   image: gradle:4.0-jdk8
   stage: build
   script:
-    - gradle test --info
+    - gradle check --info
     - gradle jacocoTestReport
     - gradle parseCoverageSummary
   artifacts:
