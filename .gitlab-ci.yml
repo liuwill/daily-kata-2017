@@ -3,6 +3,7 @@ gradle-build:
   stage: build
   script:
     - gradle test --info
+    - gradle jacocoTestReport
     - gradle parseCoverageSummary
   artifacts:
     paths:
