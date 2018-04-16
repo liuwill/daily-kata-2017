@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Created by videopls on 2017/3/1.
+ * Created by liuwill on 2017/3/1.
  */
 public class CombinedNumberMain {
     public static int answer(int arg0, int arg1) {

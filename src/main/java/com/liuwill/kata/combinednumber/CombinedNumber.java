@@ -3,7 +3,7 @@ package com.liuwill.kata.combinednumber;
 import java.util.List;
 
 /**
- * Created by videopls on 2017/3/7.
+ * Created by liuwill on 2017/3/7.
  */
 public class CombinedNumber {
     private String[] sortHeapArr;

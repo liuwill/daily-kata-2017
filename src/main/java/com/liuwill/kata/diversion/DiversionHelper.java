@@ -1,7 +1,7 @@
 package com.liuwill.kata.diversion;
 
 /**
- * Created by videopls on 2017/3/10.
+ * Created by liuwill on 2017/3/10.
  */
 public class DiversionHelper {
     public static int count(int number) {

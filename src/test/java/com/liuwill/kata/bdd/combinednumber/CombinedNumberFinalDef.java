@@ -13,7 +13,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by videopls on 2017/3/3.
+ * Created by liuwill on 2017/3/3.
  */
 public class CombinedNumberFinalDef {
     public static List<String> dataList;

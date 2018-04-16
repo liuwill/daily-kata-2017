@@ -1,7 +1,7 @@
 package com.liuwill.kata.diversion;
 
 /**
- * Created by videopls on 2017/3/9.
+ * Created by liuwill on 2017/3/9.
  */
 public class DiversionMain {
     public static int countMatch(String[] datas) {
